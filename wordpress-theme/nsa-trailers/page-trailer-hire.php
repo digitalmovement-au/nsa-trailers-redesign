@@ -1,17 +1,46 @@
 <?php
 /*
-Template Name: SEO Landing: Trailer Hire Brisbane
+Template Name: SEO Landing (Keyword + Location)
 */
+/*
+ * Duplicate this page for each keyword + location, then set these custom fields:
+ *   nsa_keyword   e.g. Trailer Hire
+ *   nsa_location  e.g. Brisbane
+ *   nsa_suburbs   optional, comma separated list of nearby suburbs
+ */
+$nsa_id       = get_queried_object_id();
+$nsa_kw       = trim( (string) get_post_meta( $nsa_id, 'nsa_keyword', true ) );
+$nsa_loc      = trim( (string) get_post_meta( $nsa_id, 'nsa_location', true ) );
+$nsa_kw       = $nsa_kw ? $nsa_kw : 'Trailer Hire';
+$nsa_loc      = $nsa_loc ? $nsa_loc : 'Brisbane';
+$nsa_kwl      = function_exists( 'mb_strtolower' ) ? mb_strtolower( $nsa_kw ) : strtolower( $nsa_kw );
+$nsa_sub_raw  = trim( (string) get_post_meta( $nsa_id, 'nsa_suburbs', true ) );
+$nsa_sub_raw  = $nsa_sub_raw ? $nsa_sub_raw : 'Upper Kedron, Gaythorne, Ferny Grove, The Gap, Keperra, Mitchelton, Enoggera, Arana Hills, Everton Park, Alderley, Newmarket, Grovely, Ashgrove, Stafford, Kedron, Samford';
+$nsa_suburbs  = array_values( array_filter( array_map( 'trim', explode( ',', $nsa_sub_raw ) ) ) );
+$nsa_first    = array_slice( $nsa_suburbs, 0, 8 );
+$nsa_last     = count( $nsa_first ) > 1 ? array_pop( $nsa_first ) : '';
+$nsa_sub_text = $nsa_last ? implode( ', ', $nsa_first ) . ' and ' . $nsa_last : implode( '', $nsa_first );
+$nsa_json     = function ( $v ) { return substr( wp_json_encode( $v ), 1, -1 ); };
+$nsa_json_tokens = array(
+	'{{KW}}'          => $nsa_json( $nsa_kw ),
+	'{{KWL}}'         => $nsa_json( $nsa_kwl ),
+	'{{LOC}}'         => $nsa_json( $nsa_loc ),
+	'{{SUBURB_TEXT}}' => $nsa_json( $nsa_sub_text ),
+);
+/* Default document title when no SEO plugin sets one */
+add_filter( 'pre_get_document_title', function ( $title ) use ( $nsa_kw, $nsa_loc ) {
+	return $title ? $title : $nsa_kw . ' ' . $nsa_loc . ' | 8x5 & 7x5 Box Trailers Open 24/7 | NSA';
+} );
 get_header(); ?>
 <main id="main">
 <section class="hero">
   <div class="hero__bg" style="background-image:url('https://cdn.lockii.app/2320e099-0bde-4f87-959a-b93867286022.png?class=xl')"></div>
   <div class="container hero__grid">
     <div class="hero__content">
-      <ol class="breadcrumbs" aria-label="Breadcrumb"><li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a></li><li>Trailer Hire Brisbane</li></ol>
-      <span class="eyebrow">Trailer Hire Brisbane North</span>
-      <h1>Affordable trailer hire in Brisbane, <em>open 24/7<svg viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden="true"><path d="M2 14 C 80 4, 200 4, 298 12" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></svg></em></h1>
-      <p class="hero__lead">Hire a galvanised 8x5 or 7x5 caged box trailer from Upper Kedron or Gaythorne. Book online, collect with secure contactless access and pay only for the days you need.</p>
+      <ol class="breadcrumbs" aria-label="Breadcrumb"><li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a></li><li><?php echo esc_html( $nsa_kw ); ?> <?php echo esc_html( $nsa_loc ); ?></li></ol>
+      <span class="eyebrow"><?php echo esc_html( $nsa_kw ); ?> <?php echo esc_html( $nsa_loc ); ?></span>
+      <h1><?php echo esc_html( $nsa_kw ); ?> <?php echo esc_html( $nsa_loc ); ?> made easy, <em>open 24/7<svg viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden="true"><path d="M2 14 C 80 4, 200 4, 298 12" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></svg></em></h1>
+      <p class="hero__lead">Looking for <?php echo esc_html( $nsa_kwl ); ?> in <?php echo esc_html( $nsa_loc ); ?>? Hire a galvanised 8x5 or 7x5 caged box trailer from Upper Kedron or Gaythorne. Book online, collect with secure contactless access and pay only for the days you need.</p>
       <div class="hero__ctas">
         <a class="btn btn--brand" href="#quote">Get a Trailer Today <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
         <a class="btn btn--white" href="tel:+61447943160"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg> Call 0447 943 160</a>
@@ -22,7 +51,7 @@ get_header(); ?>
         <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>No hidden fees</li>
       </ul>
     </div>
-    <div class="hero__media" role="img" aria-label="NSA galvanised box trailers ready for hire in Brisbane" style="background-image:url('https://cdn.lockii.app/2320e099-0bde-4f87-959a-b93867286022.png?class=lg')"></div>
+    <div class="hero__media" role="img" aria-label="NSA galvanised box trailers for <?php echo esc_html( $nsa_kwl ); ?> in <?php echo esc_html( $nsa_loc ); ?>" style="background-image:url('https://cdn.lockii.app/2320e099-0bde-4f87-959a-b93867286022.png?class=lg')"></div>
     <div class="hero__form">
       <?php get_template_part( 'part-hero-form' ); ?>
     </div>
@@ -55,15 +84,15 @@ get_header(); ?>
 <section class="section">
   <div class="container">
     <div class="section-head center">
-      <span class="eyebrow reveal">Local Trailer Rental</span>
-      <h2 data-split>Brisbane trailer hire without the hassle.</h2>
-      <p class="lead reveal">Whether you are moving house in Mitchelton, clearing out a shed in The Gap or picking up landscaping supplies in Ferny Grove, No Strings Attached makes trailer hire in Brisbane quick and stress free. Our trailers are kept at two secure north side locations, so you are never far from a ready to tow trailer.</p>
+      <span class="eyebrow reveal">Local <?php echo esc_html( $nsa_kw ); ?></span>
+      <h2 data-split><?php echo esc_html( $nsa_kw ); ?> <?php echo esc_html( $nsa_loc ); ?> without the hassle.</h2>
+      <p class="lead reveal">Whether you are moving house, clearing out a shed or picking up landscaping supplies, No Strings Attached makes <?php echo esc_html( $nsa_kwl ); ?> in <?php echo esc_html( $nsa_loc ); ?> quick and stress free. Our trailers are kept at two secure pickup points in Upper Kedron and Gaythorne, so you are never far from a ready to tow trailer.</p>
       <p class="lead reveal">Forget queuing at a service station counter or racing to return before closing time. With NSA you book online, receive your secure access details and collect your trailer whenever it suits you, 24 hours a day, 7 days a week.</p>
     </div>
     <div class="split">
       <div class="media-stack reveal reveal--left">
         <span class="media-stack__tag">Ready to tow</span>
-        <div class="media-stack__main"><img data-parallax src="https://cdn.lockii.app/636c26be-ded8-49c7-9a54-d8475d29669a.png?class=lg" alt="Box trailer hire Brisbane, 7x5 caged trailer at NSA Gaythorne" loading="lazy"></div>
+        <div class="media-stack__main"><img data-parallax src="https://cdn.lockii.app/636c26be-ded8-49c7-9a54-d8475d29669a.png?class=lg" alt="<?php echo esc_html( $nsa_kw ); ?> <?php echo esc_html( $nsa_loc ); ?>, 7x5 caged box trailer from NSA" loading="lazy"></div>
         <div class="media-stack__float"><strong>2</strong><span>Secure pickup locations in Upper Kedron and Gaythorne.</span></div>
       </div>
       <div>
@@ -84,12 +113,12 @@ get_header(); ?>
   <div class="container">
     <div class="section-head center">
       <span class="eyebrow reveal">Choose Your Trailer</span>
-      <h2 data-split>Box trailers for hire in Brisbane.</h2>
+      <h2 data-split>Our <?php echo esc_html( $nsa_kw ); ?> <?php echo esc_html( $nsa_loc ); ?> range.</h2>
       <p class="lead reveal">Two sizes to suit every job. Not sure which one you need? Give us a call and we will help you choose.</p>
     </div>
     <div class="fleet-grid">
       <a class="fleet-card reveal" href="#quote" aria-label="Hire the 8x5 Box Trailer">
-        <div class="fleet-card__media"><span class="fleet-card__chip">Most popular</span><img src="https://cdn.lockii.app/2320e099-0bde-4f87-959a-b93867286022.png?class=lg" alt="8x5 box trailer hire Brisbane" loading="lazy"></div>
+        <div class="fleet-card__media"><span class="fleet-card__chip">Most popular</span><img src="https://cdn.lockii.app/2320e099-0bde-4f87-959a-b93867286022.png?class=lg" alt="8x5 caged box trailer, <?php echo esc_html( $nsa_kwl ); ?> <?php echo esc_html( $nsa_loc ); ?>" loading="lazy"></div>
         <div class="fleet-card__body">
           <h3>8x5 Caged Box Trailer Hire</h3>
           <p>Maximum space for house moves, bulky furniture, whitegoods and large green waste loads.</p>
@@ -99,7 +128,7 @@ get_header(); ?>
         </div>
       </a>
       <a class="fleet-card reveal" href="#quote" aria-label="Hire the 7x5 Box Trailer" style="transition-delay:.12s">
-        <div class="fleet-card__media"><span class="fleet-card__chip">Easy to tow</span><img src="https://cdn.lockii.app/636c26be-ded8-49c7-9a54-d8475d29669a.png?class=lg" alt="7x5 box trailer hire Brisbane" loading="lazy"></div>
+        <div class="fleet-card__media"><span class="fleet-card__chip">Easy to tow</span><img src="https://cdn.lockii.app/636c26be-ded8-49c7-9a54-d8475d29669a.png?class=lg" alt="7x5 caged box trailer, <?php echo esc_html( $nsa_kwl ); ?> <?php echo esc_html( $nsa_loc ); ?>" loading="lazy"></div>
         <div class="fleet-card__body">
           <h3>7x5 Caged Box Trailer Hire</h3>
           <p>A compact all rounder for tip runs, DIY supplies, small moves and weekend jobs.</p>
@@ -117,7 +146,7 @@ get_header(); ?>
   <div class="container">
     <div class="section-head center">
       <span class="eyebrow reveal">Popular Uses</span>
-      <h2 data-split>What Brisbane locals hire our trailers for.</h2>
+      <h2 data-split>What <?php echo esc_html( $nsa_loc ); ?> locals use <?php echo esc_html( $nsa_kwl ); ?> for.</h2>
       <p class="lead reveal">From one off tip runs to full house moves, our trailers handle the jobs your car boot cannot.</p>
     </div>
     <div class="services">
@@ -136,8 +165,8 @@ get_header(); ?>
   <div class="container">
     <div class="section-head center">
       <span class="eyebrow reveal">Why Choose NSA</span>
-      <h2 data-split>A smarter way to hire a trailer.</h2>
-      <p class="lead reveal">See how No Strings Attached compares with traditional servo and depot trailer hire.</p>
+      <h2 data-split>A smarter way to book <?php echo esc_html( $nsa_kwl ); ?> in <?php echo esc_html( $nsa_loc ); ?>.</h2>
+      <p class="lead reveal">See how No Strings Attached compares with traditional servo and depot <?php echo esc_html( $nsa_kwl ); ?> in <?php echo esc_html( $nsa_loc ); ?>.</p>
     </div>
     <div class="table-scroll reveal">
       <table class="compare">
@@ -159,11 +188,11 @@ get_header(); ?>
   <div class="container">
     <div class="section-head center">
       <span class="eyebrow reveal">Areas We Service</span>
-      <h2 data-split>Trailer hire near you on Brisbane's north side.</h2>
-      <p class="lead reveal">Our Upper Kedron and Gaythorne locations are a short drive from these suburbs and more.</p>
+      <h2 data-split><?php echo esc_html( $nsa_kw ); ?> <?php echo esc_html( $nsa_loc ); ?> and surrounding suburbs.</h2>
+      <p class="lead reveal">Our Upper Kedron and Gaythorne pickup points are a short drive from <?php echo esc_html( $nsa_loc ); ?> and these nearby suburbs.</p>
     </div>
     <ul class="suburbs reveal">
-      <li>Upper Kedron</li><li>Gaythorne</li><li>Ferny Grove</li><li>The Gap</li><li>Keperra</li><li>Mitchelton</li><li>Enoggera</li><li>Arana Hills</li><li>Everton Park</li><li>Alderley</li><li>Newmarket</li><li>Grovely</li><li>Ashgrove</li><li>Stafford</li><li>Kedron</li><li>Samford</li>
+      <?php foreach ( $nsa_suburbs as $nsa_s ) { echo '<li>' . esc_html( $nsa_s ) . '</li>'; } ?>
     </ul>
   </div>
 </section>
@@ -172,8 +201,8 @@ get_header(); ?>
 <section class="section section--dark">
   <div class="container">
     <div class="section-head center">
-      <span class="eyebrow reveal">How To Hire A Trailer</span>
-      <h2 data-split>Book, collect and return in three steps.</h2>
+      <span class="eyebrow reveal">How <?php echo esc_html( $nsa_kw ); ?> Works</span>
+      <h2 data-split><?php echo esc_html( $nsa_kw ); ?> <?php echo esc_html( $nsa_loc ); ?> in three simple steps.</h2>
     </div>
     <div class="steps reveal">
       <div class="steps__line" aria-hidden="true"><span class="steps__fill"></span><span class="steps__runner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 7h14v8H2zM16 13h6"/><circle cx="7" cy="17" r="2"/><path d="M2 15h3M9 15h7"/></svg></span></div>
@@ -185,71 +214,105 @@ get_header(); ?>
 </section>
 
 <!-- GUIDE (read more / read less) -->
-<section class="section section--paper2" id="guide">
+<section class="section section--dark guide-section" id="guide">
   <div class="container">
     <div class="section-head center">
-      <span class="eyebrow reveal">Trailer Hire Guide</span>
-      <h2 data-split>Your complete guide to trailer hire in Brisbane.</h2>
-      <p class="lead reveal">Everything you need to know before you hire, load and tow a box trailer on Brisbane's north side.</p>
+      <span class="eyebrow reveal"><?php echo esc_html( $nsa_kw ); ?> Guide</span>
+      <h2 class="guide-title reveal">Get moving sooner with <span class="outline-fill"><?php echo esc_html( $nsa_kw ); ?> <?php echo esc_html( $nsa_loc ); ?></span></h2>
     </div>
-    <div class="guide reveal">
-      <div class="guide__body" id="guide-body">
-        <div class="guide__grid">
-          <div>
-            <h3>Why hire a trailer instead of a van or ute?</h3>
-            <p>For most moves, tip runs and weekend projects, a box trailer is the most affordable way to carry bulky items. You keep driving your own car, there is no extra driver to book, and you only pay for the trailer for the days you need it. With No Strings Attached, you can also collect and return 24/7, so you are never racing a closing time.</p>
-            <h3>Which trailer size is right for me?</h3>
-            <ul>
-              <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>8x5 caged box trailer:</b> best for house and unit moves, large furniture, whitegoods and big green waste clean ups.</span></li>
-              <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>7x5 caged box trailer:</b> ideal for tip runs, small moves, DIY supplies and weekend jobs. It is a little lighter and easier to manoeuvre.</span></li>
-              <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>Not sure?</b> Call 0447 943 160 and tell us what you are moving. We will recommend the best fit.</span></li>
-            </ul>
-          </div>
-          <div>
-            <h3>What can I carry in a box trailer?</h3>
-            <p>Our galvanised, caged trailers handle a wide range of everyday loads, including:</p>
-            <ul>
-              <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span>Sofas, beds, mattresses, tables and boxes</span></li>
-              <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span>Fridges, washing machines and other whitegoods</span></li>
-              <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span>Garden waste, branches, mulch, soil and turf</span></li>
-              <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span>Timber, pavers and renovation materials</span></li>
-              <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span>Camping gear, bikes and extra luggage</span></li>
-            </ul>
-          </div>
+    <div class="guide-layout">
+      <div class="guide">
+        <div class="guide__body" id="guide-body">
+          <p>Finding reliable <?php echo esc_html( $nsa_kwl ); ?> in <?php echo esc_html( $nsa_loc ); ?> should be quick and simple. No Strings Attached gives <?php echo esc_html( $nsa_loc ); ?> locals secure, galvanised box trailers they can book online and collect 24/7 from Upper Kedron or Gaythorne, without queues, counters or paperwork.</p>
+          <p>Before you book, it helps to know the answers to a few common questions:</p>
+          <ul>
+            <li>Which trailer size suits my job?</li>
+            <li>What can I safely carry?</li>
+            <li>How do I collect and return the trailer?</li>
+            <li>How is <?php echo esc_html( $nsa_kwl ); ?> in <?php echo esc_html( $nsa_loc ); ?> priced?</li>
+            <li>What should I check before I tow?</li>
+          </ul>
+          <p class="guide__strong">This guide covers everything you need to hire, load and tow with confidence.</p>
+
+          <h3>Why choose <?php echo esc_html( $nsa_kwl ); ?> in <?php echo esc_html( $nsa_loc ); ?> over a van or ute?</h3>
+          <p>For most moves, tip runs and weekend projects, a box trailer is the most affordable way to carry bulky items. You keep driving your own car, there is no extra driver to book, and you only pay for the days you need.</p>
+          <ul>
+            <li>Use your own car and tow bar</li>
+            <li>No extra driver or delivery fee</li>
+            <li>Collect and return any time, day or night</li>
+            <li>Discounted rates for multi day hires</li>
+          </ul>
+          <p class="guide__strong">A trailer gives you the space of a ute with the flexibility of your own schedule.</p>
+
+          <h3>Choose the right trailer size</h3>
+          <p>NSA offers two galvanised, caged box trailers so you can match the trailer to the job.</p>
+          <ul>
+            <li><b>8x5 caged box trailer:</b> best for house and unit moves, large furniture, whitegoods and big green waste clean ups</li>
+            <li><b>7x5 caged box trailer:</b> ideal for tip runs, small moves, DIY supplies and weekend jobs</li>
+            <li><b>Not sure?</b> Call 0447 943 160 and tell us what you are moving</li>
+          </ul>
+
+          <h3>What you can carry</h3>
+          <p>Our trailers handle a wide range of everyday loads around <?php echo esc_html( $nsa_loc ); ?>, including:</p>
+          <ul>
+            <li>Sofas, beds, mattresses, tables and boxes</li>
+            <li>Fridges, washing machines and other whitegoods</li>
+            <li>Garden waste, branches, mulch, soil and turf</li>
+            <li>Timber, pavers and renovation materials</li>
+            <li>Camping gear, bikes and extra luggage</li>
+          </ul>
+
+          <h3>How to book <?php echo esc_html( $nsa_kwl ); ?> in <?php echo esc_html( $nsa_loc ); ?></h3>
+          <p>Booking takes a few minutes. Choose your trailer, select Upper Kedron or Gaythorne as your pickup point, then pick your dates. You will see your total before you confirm, and you receive secure access details to collect whenever it suits you.</p>
+          <ul>
+            <li>Pick your trailer and dates online</li>
+            <li>Confirm your booking and total</li>
+            <li>Unlock and collect with secure access</li>
+            <li>Return to the same location when you are done</li>
+          </ul>
+
+          <h3>Before you tow</h3>
+          <ul>
+            <li>Make sure your vehicle has a suitable tow bar and compatible trailer plug</li>
+            <li>Check your vehicle's towing capacity in the owner's manual</li>
+            <li>Confirm the coupling is locked, the safety chain is attached and the lights work</li>
+            <li>Allow extra braking distance and take corners wider than usual</li>
+          </ul>
+
+          <h3>Loading tips for a safe trip</h3>
+          <ul>
+            <li>Place the heaviest items low and slightly forward of the axle</li>
+            <li>Spread the weight evenly from side to side</li>
+            <li>Restrain every item with ratchet straps or rope</li>
+            <li>Cover and secure loose loads such as green waste, soil and mulch</li>
+          </ul>
+
+          <h3>How much does <?php echo esc_html( $nsa_kwl ); ?> cost in <?php echo esc_html( $nsa_loc ); ?>?</h3>
+          <p>Your price depends on the trailer size and how long you need it. Each hire day is a full 24 hours, and multi day hires are discounted, so a weekend job often costs less per day than a single day hire.</p>
+          <p class="guide__strong">Your full total is always shown upfront before you confirm.</p>
+
+          <h3>Local <?php echo esc_html( $nsa_kwl ); ?> in <?php echo esc_html( $nsa_loc ); ?></h3>
+          <p>With pickup points in Upper Kedron and Gaythorne, NSA is close to <?php echo esc_html( $nsa_loc ); ?> and nearby suburbs such as <?php echo esc_html( $nsa_sub_text ); ?>. Book online, collect when it suits you and get moving with no strings attached.</p>
         </div>
-        <div class="guide__more">
-          <div class="guide__grid">
-            <div>
-              <h3>How to hire a trailer with NSA</h3>
-              <p>Booking takes a few minutes. Choose your trailer, select Upper Kedron or Gaythorne as your pickup location, then pick your dates. You will see your total before you confirm. Once booked, you receive secure access details so you can collect the trailer whenever it suits you, day or night.</p>
-              <h3>Before you tow</h3>
-              <ul>
-                <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span>Make sure your vehicle has a suitable tow bar and compatible trailer plug.</span></li>
-                <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span>Check your vehicle's towing capacity in the owner's manual.</span></li>
-                <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span>Confirm the coupling is locked, the safety chain is attached and the lights work.</span></li>
-                <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span>Allow extra braking distance and take corners wider than usual.</span></li>
-              </ul>
-            </div>
-            <div>
-              <h3>Loading tips for a safe trip</h3>
-              <ul>
-                <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span>Place the heaviest items low and slightly forward of the axle.</span></li>
-                <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span>Spread the weight evenly from side to side.</span></li>
-                <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span>Restrain every item with ratchet straps or rope so nothing can shift.</span></li>
-                <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span>Cover and secure loose loads such as green waste, soil and mulch.</span></li>
-              </ul>
-              <h3>How much does trailer hire cost?</h3>
-              <p>Your price depends on the trailer size and how long you need it. Each hire day is a full 24 hours, and multi day hires are discounted, so a weekend move often costs less per day than a single day hire. Your full total is always shown upfront before you confirm.</p>
-              <h3>Local trailer hire on Brisbane's north side</h3>
-              <p>With pickup points in Upper Kedron and Gaythorne, NSA is close to Ferny Grove, The Gap, Keperra, Mitchelton, Enoggera, Arana Hills, Everton Park, Alderley and surrounding suburbs. Book online, collect when it suits you and get moving with no strings attached.</p>
-            </div>
-          </div>
+        <div class="guide__fade" aria-hidden="true"></div>
+        <div class="guide__actions">
+          <button class="guide__toggle" type="button" aria-expanded="false" aria-controls="guide-body"><span class="guide__label">Read more</span> <span class="guide__chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></span></button>
         </div>
       </div>
-      <div class="guide__fade" aria-hidden="true"></div>
-      <div class="guide__actions">
-        <button class="btn btn--dark guide__toggle" type="button" aria-expanded="false" aria-controls="guide-body"><span class="guide__label">Read More</span> <span class="guide__chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></span></button>
-      </div>
+      <aside class="benefits reveal">
+        <span class="benefits__pill"><i></i>What You Get</span>
+        <h3 class="benefits__title">Benefits</h3>
+        <ul class="benefits__list">
+            <li class="reveal" style="transition-delay:0.0s"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span>24/7 contactless pickup and return</span></li>
+            <li class="reveal" style="transition-delay:0.08s"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span>Galvanised, caged trailers checked before every hire</span></li>
+            <li class="reveal" style="transition-delay:0.16s"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span>Your full total shown before you book</span></li>
+            <li class="reveal" style="transition-delay:0.24s"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span>Discounts on multi day hires</span></li>
+            <li class="reveal" style="transition-delay:0.32s"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span>Two pickup points in Upper Kedron and Gaythorne</span></li>
+            <li class="reveal" style="transition-delay:0.4s"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span>Friendly local support by phone, text or email</span></li>
+        </ul>
+        <div class="benefits__best"><small>Best for:</small><p><?php echo esc_html( $nsa_loc ); ?> locals moving house, clearing out junk or tackling weekend projects who want a trailer without the hassle.</p></div>
+        <a class="btn btn--brand btn--block" href="#quote">Book a Trailer <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      </aside>
     </div>
   </div>
 </section>
@@ -258,7 +321,7 @@ get_header(); ?>
 <section class="section">
   <div class="container">
     <div class="cta-band reveal reveal--scale">
-      <h2>Need a trailer in Brisbane today?</h2>
+      <h2>Need <?php echo esc_html( $nsa_kwl ); ?> in <?php echo esc_html( $nsa_loc ); ?> today?</h2>
       <p>Same day bookings are often available. Check now or call our local team.</p>
       <div class="cta-band__btns">
         <a class="btn btn--dark" href="#quote">Check Availability <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
@@ -272,19 +335,19 @@ get_header(); ?>
 <section class="section section--paper2" id="faq">
   <div class="container faq-wrap">
     <div class="section-head faq-wrap__head">
-      <span class="eyebrow reveal">Trailer Hire FAQs</span>
-      <h2 data-split>Brisbane trailer hire questions, answered.</h2>
+      <span class="eyebrow reveal"><?php echo esc_html( $nsa_kw ); ?> <?php echo esc_html( $nsa_loc ); ?> FAQs</span>
+      <h2 data-split><?php echo esc_html( $nsa_kw ); ?> <?php echo esc_html( $nsa_loc ); ?> questions, answered.</h2>
       <p class="lead reveal">Cannot find what you are looking for? Reach out and we will help.</p>
         <a class="btn btn--dark reveal" href="tel:+61447943160"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg> Call 0447 943 160</a>
     </div>
     <div class="faq reveal">
-      <details open><summary>How much does trailer hire cost in Brisbane?<span class="plus" aria-hidden="true"></span></summary><div class="faq__body"><p>Pricing depends on the trailer size and how many days you need it. Your full total is shown before you confirm, and multi day hires are discounted. Contact us for a quick quote.</p></div></details>
+      <details open><summary>How much does <?php echo esc_html( $nsa_kwl ); ?> cost in <?php echo esc_html( $nsa_loc ); ?>?<span class="plus" aria-hidden="true"></span></summary><div class="faq__body"><p>Pricing depends on the trailer size and how many days you need it. Your full total is shown before you confirm, and multi day hires are discounted. Contact us for a quick quote.</p></div></details>
       <details><summary>Can I pick up a trailer after hours?<span class="plus" aria-hidden="true"></span></summary><div class="faq__body"><p>Yes. Both our Upper Kedron and Gaythorne locations offer 24/7 contactless pickup and return using secure access details sent when you book.</p></div></details>
       <details><summary>What size trailer do I need to move house?<span class="plus" aria-hidden="true"></span></summary><div class="faq__body"><p>For most house and unit moves the 8x5 caged box trailer is the best choice. For smaller loads, tip runs and DIY supplies the 7x5 is easier to tow and manoeuvre.</p></div></details>
       <details><summary>Do I need a special licence to tow a box trailer?<span class="plus" aria-hidden="true"></span></summary><div class="faq__body"><p>A standard Queensland car licence (class C) generally covers towing a light box trailer, provided your vehicle has a suitable tow bar and is rated to tow the load.</p></div></details>
-      <details><summary>Can I use the trailer for green waste and tip runs?<span class="plus" aria-hidden="true"></span></summary><div class="faq__body"><p>Absolutely. Our galvanised trailers are ideal for green waste, hard rubbish and tip runs. Please make sure loads are secured and covered when required.</p></div></details>
-      <details><summary>How long is a trailer hire day?<span class="plus" aria-hidden="true"></span></summary><div class="faq__body"><p>Each hire day is a full 24 hours from your pickup time, so you are not rushing to return before closing time.</p></div></details>
-      <details><summary>Which suburbs do you service?<span class="plus" aria-hidden="true"></span></summary><div class="faq__body"><p>We are based in Upper Kedron and Gaythorne and regularly help customers from Ferny Grove, The Gap, Keperra, Mitchelton, Enoggera, Arana Hills, Everton Park, Alderley and surrounding north Brisbane suburbs.</p></div></details>
+      <details><summary>Can I use <?php echo esc_html( $nsa_kwl ); ?> in <?php echo esc_html( $nsa_loc ); ?> for green waste and tip runs?<span class="plus" aria-hidden="true"></span></summary><div class="faq__body"><p>Absolutely. Our galvanised trailers are ideal for green waste, hard rubbish and tip runs. Please make sure loads are secured and covered when required.</p></div></details>
+      <details><summary>How long is a hire day?<span class="plus" aria-hidden="true"></span></summary><div class="faq__body"><p>Each hire day is a full 24 hours from your pickup time, so you are not rushing to return before closing time.</p></div></details>
+      <details><summary>Which suburbs near <?php echo esc_html( $nsa_loc ); ?> do you service?<span class="plus" aria-hidden="true"></span></summary><div class="faq__body"><p>We are based in Upper Kedron and Gaythorne and regularly help customers from <?php echo esc_html( $nsa_sub_text ); ?> and surrounding suburbs.</p></div></details>
     </div>
   </div>
 </section>
@@ -292,5 +355,5 @@ get_header(); ?>
 <?php get_template_part( 'part-contact' ); ?>
 </main>
 
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How much does trailer hire cost in Brisbane?", "acceptedAnswer": {"@type": "Answer", "text": "Pricing depends on the trailer size and how many days you need it. Your full total is shown before you confirm, and multi day hires are discounted. Contact us for a quick quote."}}, {"@type": "Question", "name": "Can I pick up a trailer after hours?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Both our Upper Kedron and Gaythorne locations offer 24/7 contactless pickup and return using secure access details sent when you book."}}, {"@type": "Question", "name": "What size trailer do I need to move house?", "acceptedAnswer": {"@type": "Answer", "text": "For most house and unit moves the 8x5 caged box trailer is the best choice. For smaller loads, tip runs and DIY supplies the 7x5 is easier to tow and manoeuvre."}}, {"@type": "Question", "name": "Do I need a special licence to tow a box trailer?", "acceptedAnswer": {"@type": "Answer", "text": "A standard Queensland car licence (class C) generally covers towing a light box trailer, provided your vehicle has a suitable tow bar and is rated to tow the load."}}, {"@type": "Question", "name": "Can I use the trailer for green waste and tip runs?", "acceptedAnswer": {"@type": "Answer", "text": "Absolutely. Our galvanised trailers are ideal for green waste, hard rubbish and tip runs. Please make sure loads are secured and covered when required."}}, {"@type": "Question", "name": "How long is a trailer hire day?", "acceptedAnswer": {"@type": "Answer", "text": "Each hire day is a full 24 hours from your pickup time, so you are not rushing to return before closing time."}}, {"@type": "Question", "name": "Which suburbs do you service?", "acceptedAnswer": {"@type": "Answer", "text": "We are based in Upper Kedron and Gaythorne and regularly help customers from Ferny Grove, The Gap, Keperra, Mitchelton, Enoggera, Arana Hills, Everton Park, Alderley and surrounding north Brisbane suburbs."}}]}</script>
+<?php echo strtr( '<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How much does {{KWL}} cost in {{LOC}}?", "acceptedAnswer": {"@type": "Answer", "text": "Pricing depends on the trailer size and how many days you need it. Your full total is shown before you confirm, and multi day hires are discounted. Contact us for a quick quote."}}, {"@type": "Question", "name": "Can I pick up a trailer after hours?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Both our Upper Kedron and Gaythorne locations offer 24/7 contactless pickup and return using secure access details sent when you book."}}, {"@type": "Question", "name": "What size trailer do I need to move house?", "acceptedAnswer": {"@type": "Answer", "text": "For most house and unit moves the 8x5 caged box trailer is the best choice. For smaller loads, tip runs and DIY supplies the 7x5 is easier to tow and manoeuvre."}}, {"@type": "Question", "name": "Do I need a special licence to tow a box trailer?", "acceptedAnswer": {"@type": "Answer", "text": "A standard Queensland car licence (class C) generally covers towing a light box trailer, provided your vehicle has a suitable tow bar and is rated to tow the load."}}, {"@type": "Question", "name": "Can I use {{KWL}} in {{LOC}} for green waste and tip runs?", "acceptedAnswer": {"@type": "Answer", "text": "Absolutely. Our galvanised trailers are ideal for green waste, hard rubbish and tip runs. Please make sure loads are secured and covered when required."}}, {"@type": "Question", "name": "How long is a hire day?", "acceptedAnswer": {"@type": "Answer", "text": "Each hire day is a full 24 hours from your pickup time, so you are not rushing to return before closing time."}}, {"@type": "Question", "name": "Which suburbs near {{LOC}} do you service?", "acceptedAnswer": {"@type": "Answer", "text": "We are based in Upper Kedron and Gaythorne and regularly help customers from {{SUBURB_TEXT}} and surrounding suburbs."}}]}</script>', $nsa_json_tokens ); ?>
 <?php get_footer();

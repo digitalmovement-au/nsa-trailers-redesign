@@ -770,24 +770,47 @@ form.is-sent .form-success{display:block;animation:fadeUp .6s var(--ease)}
 .socials a,.socials a[aria-label="Facebook"],.socials a[aria-label="Instagram"],.socials a[aria-label="Email"]{background:var(--brand);color:var(--ink)}
 .socials a:hover,.socials a[aria-label="Facebook"]:hover,.socials a[aria-label="Instagram"]:hover,.socials a[aria-label="Email"]:hover{background:var(--white);color:var(--ink)}
 
-/* ===== SEO guide with Read More / Read Less ===== */
-.guide{position:relative;background:var(--white);border:1px solid var(--line);border-radius:var(--radius-lg);padding:clamp(28px,4vw,60px);box-shadow:0 30px 70px -45px rgba(10,11,13,.4);scroll-margin-top:130px}
-.guide::before{content:"";position:absolute;left:clamp(28px,4vw,60px);top:0;width:80px;height:4px;border-radius:0 0 4px 4px;background:var(--brand)}
-.guide__body{--collapsed:380px;max-height:var(--collapsed);overflow:hidden;transition:max-height .7s var(--ease)}
-.guide__grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,64px)}
-.guide__more{margin-top:clamp(16px,2vw,24px);padding-top:clamp(16px,2vw,24px);border-top:1px dashed var(--line)}
-.guide h3{font-size:clamp(1.2rem,1.5vw,1.45rem);margin:0 0 12px}
-.guide h3:not(:first-child){margin-top:28px}
-.guide p{color:var(--muted)}
-.guide ul{list-style:none;padding:0;margin:0 0 8px;display:grid;gap:10px}
-.guide li{display:flex;gap:12px;align-items:flex-start;color:var(--muted)}
-.guide li b{color:var(--ink)}
-.guide li .check{margin-top:2px}
-.guide__fade{position:absolute;left:1px;right:1px;bottom:96px;height:160px;pointer-events:none;background:linear-gradient(180deg,rgba(255,255,255,0),var(--white) 85%);transition:opacity .5s}
+/* ===== SEO guide: long article with Read more + sticky benefits card ===== */
+.guide-section{background:radial-gradient(ellipse at 80% 0%,rgba(255,212,0,.08),transparent 55%),var(--ink)}
+.guide-title{font-size:clamp(2.2rem,4.6vw,4.6rem);text-transform:uppercase;font-stretch:118%;line-height:1.02;color:var(--white)}
+.outline-fill{display:inline;color:transparent;-webkit-text-stroke:1.5px var(--brand);background:linear-gradient(90deg,var(--brand),var(--brand)) no-repeat 0 0/0% 100%;-webkit-background-clip:text;background-clip:text;transition:background-size 1.8s var(--ease) .3s}
+.guide-title.is-in .outline-fill{background-size:100% 100%}
+.guide-layout{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,.9fr);gap:clamp(30px,5vw,80px);align-items:start}
+.guide{position:relative;color:#DADDE2}
+.guide__body{--collapsed:620px;max-height:var(--collapsed);overflow:hidden;transition:max-height .8s var(--ease)}
+.guide__body p{color:#D2D5DA;font-size:1.04rem;margin:0 0 18px}
+.guide__body h3{font-family:var(--font-body);font-stretch:100%;text-transform:uppercase;letter-spacing:.01em;font-size:1.08rem;font-weight:800;color:var(--white);margin:36px 0 14px}
+.guide__body ul{list-style:none;margin:0 0 20px;padding:0;display:grid;gap:10px}
+.guide__body li{position:relative;padding-left:22px;color:#E6E8EB}
+.guide__body li::before{content:"";position:absolute;left:2px;top:.62em;width:7px;height:7px;border-radius:50%;background:var(--brand)}
+.guide__body li b{color:var(--white)}
+.guide__strong{color:var(--white)!important;font-weight:700}
+.guide__fade{position:absolute;left:0;right:0;bottom:72px;height:200px;pointer-events:none;background:linear-gradient(180deg,rgba(10,11,13,0),var(--ink) 88%);transition:opacity .5s}
 .guide.is-open .guide__fade{opacity:0}
-.guide__actions{display:flex;justify-content:center;padding-top:28px}
+.guide__actions{padding-top:22px}
+.guide__toggle{display:inline-flex;align-items:center;gap:10px;padding:13px 24px;border-radius:999px;background:#1A1608;border:1.5px solid rgba(255,212,0,.55);color:var(--brand);font-weight:700;font-size:1rem;cursor:pointer;transition:background .35s,color .35s,transform .35s var(--ease),box-shadow .35s}
+.guide__toggle svg{width:18px;height:18px}
+.guide__toggle:hover{background:var(--brand);color:var(--ink);transform:translateY(-2px);box-shadow:0 14px 30px -12px rgba(255,212,0,.6)}
 .guide__chev{display:inline-grid;transition:transform .45s var(--ease)}
 .guide.is-open .guide__chev{transform:rotate(180deg)}
-.guide__toggle:hover .guide__chev svg{transform:none}
-@media (max-width:900px){.guide__grid{grid-template-columns:1fr}.guide__body{--collapsed:520px}}
-@media (max-width:720px){.guide{text-align:left}.guide__fade{bottom:88px}}
+.benefits{position:sticky;top:130px;background:linear-gradient(170deg,#1C1A12 0%,#121316 55%,#0E0F12 100%);border:1px solid rgba(255,212,0,.45);border-radius:var(--radius-lg);padding:clamp(26px,3vw,38px);box-shadow:0 40px 80px -40px rgba(255,212,0,.25)}
+.benefits__pill{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;background:#221D08;border:1px solid rgba(255,212,0,.35);color:var(--brand);font-size:.74rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.benefits__pill i{width:7px;height:7px;border-radius:50%;background:var(--brand);box-shadow:0 0 0 3px rgba(255,212,0,.25)}
+.benefits__title{font-size:clamp(2rem,3vw,2.8rem);text-transform:uppercase;font-stretch:120%;color:var(--white);margin:16px 0 18px}
+.benefits__list{list-style:none;margin:0 0 22px;padding:0}
+.benefits__list li{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid #24272D;color:#F0F1F3;font-weight:500}
+.benefits__list li:last-child{border-bottom:0}
+.benefits__list .check{width:30px;height:30px;border-radius:9px;flex:none;box-shadow:0 8px 18px -8px rgba(255,212,0,.7)}
+.benefits__list .check svg{width:15px;height:15px}
+.benefits__best{border:1px dashed rgba(255,212,0,.45);border-radius:var(--radius);padding:16px 18px;margin-bottom:20px;background:#15140F}
+.benefits__best small{display:block;color:var(--brand);font-weight:800;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px}
+.benefits__best p{margin:0;color:#F0F1F3}
+@media (max-width:1024px){
+  .guide-layout{grid-template-columns:1fr}
+  .benefits{position:static}
+  .guide__body{--collapsed:560px}
+}
+@media (max-width:720px){
+  .guide,.guide__body{text-align:left}
+  .guide__actions{text-align:center}
+}

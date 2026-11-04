@@ -33,7 +33,7 @@
       <ul class="nav">
         <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="<?php echo is_front_page() ? 'is-active' : ''; ?>">Home</a></li>
         <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>#fleet">Our Fleet</a></li>
-        <li><a href="<?php echo esc_url( home_url( '/trailer-hire-brisbane/' ) ); ?>" class="<?php echo is_page_template( 'page-trailer-hire.php' ) ? 'is-active' : ''; ?>">Trailer Hire Brisbane</a></li>
+        <li><a href="<?php echo esc_url( home_url( '/trailer-hire-brisbane/' ) ); ?>" class="<?php echo is_page( 'trailer-hire-brisbane' ) ? 'is-active' : ''; ?>">Trailer Hire Brisbane</a></li>
         <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>#locations">Locations</a></li>
         <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>#faq">FAQs</a></li>
         <li><a href="#contact">Contact</a></li>

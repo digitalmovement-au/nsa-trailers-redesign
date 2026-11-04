@@ -142,7 +142,7 @@
       var start = body.offsetHeight;
       g.classList.toggle('is-open', !open);
       btn.setAttribute('aria-expanded', String(!open));
-      label.textContent = open ? 'Read More' : 'Read Less';
+      label.textContent = open ? 'Read more' : 'Read less';
       var end = open ? collapsed() : body.scrollHeight;
       if (reduce) { body.style.maxHeight = open ? '' : 'none'; return; }
       body.style.maxHeight = start + 'px';
