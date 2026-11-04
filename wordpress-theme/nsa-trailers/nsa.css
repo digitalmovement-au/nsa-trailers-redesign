@@ -719,3 +719,36 @@ form.is-sent .form-success{display:block;animation:fadeUp .6s var(--ease)}
 .fleet-card__top{justify-content:center}
 .fleet-card .tags{justify-content:center}
 .fleet-card__cta > span:first-child{flex:1;text-align:center;padding-left:34px}
+
+/* Footer: all column text in white */
+.footer-grid ul,.footer-grid ul li,.footer-grid ul a{color:var(--white)}
+.footer-grid ul a:hover{color:var(--brand)}
+.footer-grid .footer-ci,.footer-grid ul .footer-ci > a{display:flex!important;align-items:center;gap:12px}
+.footer-ci > a::before{display:none}
+.footer-ci__icon{width:34px;height:34px;flex:none;border-radius:50%;display:grid;place-items:center;background:#16191D;border:1px solid var(--line-d);color:var(--brand);transition:background .3s,color .3s,transform .4s var(--ease)}
+.footer-ci__icon svg{width:15px;height:15px}
+.footer-ci > a:hover .footer-ci__icon{background:var(--brand);color:var(--ink);transform:rotate(-10deg)}
+.footer-tile--cta b{font-size:1.35rem}
+@media (max-width:720px){.footer-ci,.footer-ci > a{justify-content:center}}
+
+/* Footer socials: each network in its own brand colour */
+.socials a{border:0;color:#fff}
+.socials a[aria-label="Facebook"]{background:#1877F2}
+.socials a[aria-label="Instagram"]{background:radial-gradient(circle at 30% 107%,#FDF497 0%,#FDF497 5%,#FD5949 45%,#D6249F 60%,#285AEB 90%)}
+.socials a[aria-label="Email"]{background:var(--brand);color:var(--ink)}
+.socials a:hover{transform:translateY(-4px) scale(1.08);box-shadow:0 12px 24px -8px rgba(0,0,0,.6);filter:brightness(1.08)}
+.socials a[aria-label="Facebook"]:hover,.socials a[aria-label="Instagram"]:hover{color:#fff}
+.socials a[aria-label="Email"]:hover{background:var(--brand);color:var(--ink)}
+
+/* Readability on dark backgrounds */
+:root{--muted-d:#D2D5DA}
+.hero__lead{color:#E4E6EA}
+.hero__trust{color:#F0F1F3}
+.footer-bottom{color:#C9CDD3}
+.footer-bottom a{color:#E4E6EA}
+.footer-tile small{color:#C9CDD3}
+.footer-brand p{color:#D2D5DA}
+.stat-card p,.step p,.fleet-card p,.section--dark p,.stats-band .lead{color:#D2D5DA}
+.fleet-card__specs li{color:#F0F1F3}
+.mobile-panel p{color:#D2D5DA}
+.hero__lead{max-width:none}
