@@ -133,6 +133,28 @@
     b.addEventListener('mouseleave', setPos);
   });
 
+  /* Read more / read less */
+  document.querySelectorAll('.guide').forEach(function (g) {
+    var body = g.querySelector('.guide__body'), btn = g.querySelector('.guide__toggle'), label = g.querySelector('.guide__label');
+    var collapsed = function () { return parseFloat(getComputedStyle(body).getPropertyValue('--collapsed')) || 460; };
+    btn.addEventListener('click', function () {
+      var open = g.classList.contains('is-open');
+      var start = body.offsetHeight;
+      g.classList.toggle('is-open', !open);
+      btn.setAttribute('aria-expanded', String(!open));
+      label.textContent = open ? 'Read More' : 'Read Less';
+      var end = open ? collapsed() : body.scrollHeight;
+      if (reduce) { body.style.maxHeight = open ? '' : 'none'; return; }
+      body.style.maxHeight = start + 'px';
+      requestAnimationFrame(function () { body.style.maxHeight = end + 'px'; });
+      body.addEventListener('transitionend', function te() {
+        body.removeEventListener('transitionend', te);
+        if (!open) body.style.maxHeight = 'none'; else body.style.maxHeight = '';
+      });
+      if (open) g.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+    });
+  });
+
   /* Year */
   document.querySelectorAll('[data-year]').forEach(function (y) { y.textContent = new Date().getFullYear(); });
 })();
