@@ -155,7 +155,7 @@ get_header(); ?>
 </section>
 
 <!-- SUBURBS -->
-<section class="section section--dark">
+<section class="section suburbs-section">
   <div class="container">
     <div class="section-head center">
       <span class="eyebrow reveal">Areas We Service</span>
@@ -185,7 +185,7 @@ get_header(); ?>
 </section>
 
 <!-- CTA -->
-<section class="section" style="padding-top:0">
+<section class="section">
   <div class="container">
     <div class="cta-band reveal reveal--scale">
       <h2>Need a trailer in Brisbane today?</h2>
