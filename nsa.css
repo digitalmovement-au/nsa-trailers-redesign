@@ -836,3 +836,14 @@ form.is-sent .form-success{display:block;animation:fadeUp .6s var(--ease)}
 .guide__side{position:relative;align-self:stretch;min-width:0}
 .guide__side .guide__toc{position:sticky;top:130px}
 @media (max-width:1024px){.guide__side .guide__toc{position:static}}
+/* iOS Safari zooms into inputs under 16px: keep form text at 16px on touch screens */
+@media (max-width:1024px){.field input,.field select,.field textarea,.qf__field input{font-size:16px}}
+/* Date fields: never wider than their column (iOS/Android give date inputs a minimum width) */
+.form-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.form-grid > *{min-width:0}
+.field input,.field select,.field textarea{min-width:0;max-width:100%}
+.field input[type="date"]{-webkit-appearance:none;appearance:none;display:block;text-align:left;min-height:48px;line-height:1.2}
+.field input[type="date"]::-webkit-date-and-time-value{text-align:left}
+.qf__field input[type="date"]{padding-right:8px}
+@media (max-width:720px){.form-grid:not(.qf__dates){grid-template-columns:minmax(0,1fr)}}
+@media (max-width:360px){.qf .qf__dates{grid-template-columns:minmax(0,1fr)}}
