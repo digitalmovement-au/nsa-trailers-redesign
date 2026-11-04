@@ -713,3 +713,9 @@ form.is-sent .form-success{display:block;animation:fadeUp .6s var(--ease)}
 .cta-band .btn--white::after{background:var(--ink)}
 .cta-band .btn--white:hover{color:var(--white);box-shadow:0 22px 40px -16px rgba(20,17,0,.6),0 0 0 4px rgba(20,17,0,.18)}
 .cta-band .btn--white:hover svg{color:var(--brand)}
+
+/* Rental range cards: centred content on all screens */
+.fleet-card__body{text-align:center}
+.fleet-card__top{justify-content:center}
+.fleet-card .tags{justify-content:center}
+.fleet-card__cta > span:first-child{flex:1;text-align:center;padding-left:34px}
