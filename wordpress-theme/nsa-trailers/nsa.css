@@ -765,3 +765,7 @@ form.is-sent .form-success{display:block;animation:fadeUp .6s var(--ease)}
 @media (max-width:720px){
   .compare th,.compare td{padding:14px 12px;font-size:.86rem}
 }
+.fleet-card__chip{left:50%!important;transform:translateX(-50%)}
+/* Socials: all in NSA yellow */
+.socials a,.socials a[aria-label="Facebook"],.socials a[aria-label="Instagram"],.socials a[aria-label="Email"]{background:var(--brand);color:var(--ink)}
+.socials a:hover,.socials a[aria-label="Facebook"]:hover,.socials a[aria-label="Instagram"]:hover,.socials a[aria-label="Email"]:hover{background:var(--white);color:var(--ink)}

@@ -89,7 +89,7 @@ get_header(); ?>
     </div>
     <div class="fleet-grid">
       <a class="fleet-card reveal" href="#quote" aria-label="Hire the 8x5 Box Trailer">
-        <div class="fleet-card__media"><span class="fleet-card__size">8x5<small>ft</small></span><span class="fleet-card__chip">Most popular</span><img src="https://cdn.lockii.app/2320e099-0bde-4f87-959a-b93867286022.png?class=lg" alt="8x5 box trailer hire Brisbane" loading="lazy"></div>
+        <div class="fleet-card__media"><span class="fleet-card__chip">Most popular</span><img src="https://cdn.lockii.app/2320e099-0bde-4f87-959a-b93867286022.png?class=lg" alt="8x5 box trailer hire Brisbane" loading="lazy"></div>
         <div class="fleet-card__body">
           <h3>8x5 Caged Box Trailer Hire</h3>
           <p>Maximum space for house moves, bulky furniture, whitegoods and large green waste loads.</p>
@@ -99,7 +99,7 @@ get_header(); ?>
         </div>
       </a>
       <a class="fleet-card reveal" href="#quote" aria-label="Hire the 7x5 Box Trailer" style="transition-delay:.12s">
-        <div class="fleet-card__media"><span class="fleet-card__size">7x5<small>ft</small></span><span class="fleet-card__chip">Easy to tow</span><img src="https://cdn.lockii.app/636c26be-ded8-49c7-9a54-d8475d29669a.png?class=lg" alt="7x5 box trailer hire Brisbane" loading="lazy"></div>
+        <div class="fleet-card__media"><span class="fleet-card__chip">Easy to tow</span><img src="https://cdn.lockii.app/636c26be-ded8-49c7-9a54-d8475d29669a.png?class=lg" alt="7x5 box trailer hire Brisbane" loading="lazy"></div>
         <div class="fleet-card__body">
           <h3>7x5 Caged Box Trailer Hire</h3>
           <p>A compact all rounder for tip runs, DIY supplies, small moves and weekend jobs.</p>
