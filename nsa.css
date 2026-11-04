@@ -765,3 +765,4 @@ form.is-sent .form-success{display:block;animation:fadeUp .6s var(--ease)}
 @media (max-width:720px){
   .compare th,.compare td{padding:14px 12px;font-size:.86rem}
 }
+.fleet-card__chip{left:50%!important;transform:translateX(-50%)}
