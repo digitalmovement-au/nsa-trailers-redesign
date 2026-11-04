@@ -751,3 +751,4 @@ form.is-sent .form-success{display:block;animation:fadeUp .6s var(--ease)}
 .stat-card p,.step p,.fleet-card p,.section--dark p,.stats-band .lead{color:#D2D5DA}
 .fleet-card__specs li{color:#F0F1F3}
 .mobile-panel p{color:#D2D5DA}
+.hero__lead{max-width:none}
