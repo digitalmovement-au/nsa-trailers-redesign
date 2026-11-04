@@ -1,0 +1,120 @@
+/* NSA Trailers | interactions */
+(function () {
+  var doc = document.documentElement;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Sticky header + progress bar + floating call */
+  var header = document.querySelector('.site-header');
+  var progress = document.querySelector('.progress');
+  var floatCall = document.querySelector('.float-call');
+  var heroBg = document.querySelector('.hero__bg');
+  var parallaxImgs = document.querySelectorAll('[data-parallax]');
+  var ticking = false;
+  function onScroll() {
+    var y = window.scrollY;
+    var h = doc.scrollHeight - window.innerHeight;
+    if (header) header.classList.toggle('is-scrolled', y > 40);
+    if (progress) progress.style.transform = 'scaleX(' + (h > 0 ? y / h : 0) + ')';
+    if (floatCall) floatCall.classList.toggle('is-visible', y > 300);
+    if (!reduce) {
+      if (heroBg && y < window.innerHeight * 1.2) heroBg.style.transform = 'scale(1.06) translateY(' + y * 0.25 + 'px)';
+      parallaxImgs.forEach(function (img) {
+        var r = img.parentElement.getBoundingClientRect();
+        if (r.bottom < 0 || r.top > window.innerHeight) return;
+        var p = (r.top + r.height / 2 - window.innerHeight / 2) / window.innerHeight;
+        img.style.transform = 'translateY(' + (p * -60 - 30) + 'px)';
+      });
+    }
+    ticking = false;
+  }
+  window.addEventListener('scroll', function () {
+    if (!ticking) { requestAnimationFrame(onScroll); ticking = true; }
+  }, { passive: true });
+  onScroll();
+
+  /* Mobile menu */
+  var burger = document.querySelector('.hamburger');
+  if (burger) {
+    burger.addEventListener('click', function () {
+      var open = document.body.classList.toggle('menu-open');
+      burger.setAttribute('aria-expanded', open);
+    });
+    document.querySelectorAll('.mobile-panel a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        document.body.classList.remove('menu-open');
+        burger.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  /* Split headings into words for a mask reveal */
+  document.querySelectorAll('[data-split]').forEach(function (el) {
+    var words = el.innerHTML.trim().split(/\s+(?![^<]*>)/);
+    el.innerHTML = words.map(function (w, i) {
+      return '<span class="w"><span style="transition-delay:' + i * 0.05 + 's">' + w + '</span></span>';
+    }).join(' ');
+    el.classList.add('split-words');
+  });
+
+  /* Reveal on scroll */
+  var revealEls = document.querySelectorAll('.reveal, .split-words');
+  if ('IntersectionObserver' in window && !reduce) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(function (el) { io.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add('is-in'); });
+  }
+
+  /* Count up stats */
+  var counters = document.querySelectorAll('[data-count]');
+  if ('IntersectionObserver' in window) {
+    var cio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        var el = e.target, end = parseFloat(el.dataset.count), start = performance.now(), dur = 1600;
+        (function tick(now) {
+          var t = Math.min((now - start) / dur, 1), eased = 1 - Math.pow(1 - t, 3);
+          el.textContent = Math.round(end * eased);
+          if (t < 1) requestAnimationFrame(tick);
+        })(start);
+        cio.unobserve(el);
+      });
+    }, { threshold: 0.6 });
+    counters.forEach(function (c) { if (!reduce) { c.textContent = '0'; cio.observe(c); } });
+  }
+
+  /* FAQ smooth open/close */
+  document.querySelectorAll('.faq details').forEach(function (d) {
+    var body = d.querySelector('.faq__body');
+    d.querySelector('summary').addEventListener('click', function (ev) {
+      if (reduce) return;
+      ev.preventDefault();
+      if (d.open) {
+        body.animate([{ height: body.offsetHeight + 'px' }, { height: '0px' }], { duration: 350, easing: 'ease' }).onfinish = function () { d.open = false; };
+      } else {
+        d.open = true;
+        var h = body.offsetHeight;
+        body.animate([{ height: '0px' }, { height: h + 'px' }], { duration: 400, easing: 'ease' });
+      }
+    });
+  });
+
+  /* Set date inputs minimum to today */
+  var today = new Date().toISOString().split('T')[0];
+  document.querySelectorAll('input[type="date"]').forEach(function (i) { i.min = today; });
+
+  /* Demo form submit (wire to Contact Form 7 / Gravity Forms in WordPress) */
+  document.querySelectorAll('form[data-demo]').forEach(function (f) {
+    f.addEventListener('submit', function (ev) {
+      ev.preventDefault();
+      f.classList.add('is-sent');
+    });
+  });
+
+  /* Year */
+  document.querySelectorAll('[data-year]').forEach(function (y) { y.textContent = new Date().getFullYear(); });
+})();
