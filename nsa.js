@@ -155,6 +155,24 @@
     });
   });
 
+  /* Guide table of contents: open the guide before jumping to a section */
+  document.querySelectorAll('.guide__toc a').forEach(function (a) {
+    a.addEventListener('click', function (ev) {
+      var g = a.closest('.guide'), target = document.querySelector(a.getAttribute('href'));
+      if (!g || !target) return;
+      ev.preventDefault();
+      if (!g.classList.contains('is-open')) {
+        var body = g.querySelector('.guide__body');
+        g.classList.add('is-open');
+        body.style.maxHeight = 'none';
+        g.querySelector('.guide__toggle').setAttribute('aria-expanded', 'true');
+        g.querySelector('.guide__label').textContent = 'Read less';
+      }
+      g.querySelectorAll('.guide__toc a').forEach(function (x) { x.classList.toggle('is-active', x === a); });
+      target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+    });
+  });
+
   /* Year */
   document.querySelectorAll('[data-year]').forEach(function (y) { y.textContent = new Date().getFullYear(); });
 })();
