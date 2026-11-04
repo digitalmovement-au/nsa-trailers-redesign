@@ -184,6 +184,76 @@ get_header(); ?>
   </div>
 </section>
 
+<!-- GUIDE (read more / read less) -->
+<section class="section section--paper2" id="guide">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow reveal">Trailer Hire Guide</span>
+      <h2 data-split>Your complete guide to trailer hire in Brisbane.</h2>
+      <p class="lead reveal">Everything you need to know before you hire, load and tow a box trailer on Brisbane's north side.</p>
+    </div>
+    <div class="guide reveal">
+      <div class="guide__body" id="guide-body">
+        <div class="guide__grid">
+          <div>
+            <h3>Why hire a trailer instead of a van or ute?</h3>
+            <p>For most moves, tip runs and weekend projects, a box trailer is the most affordable way to carry bulky items. You keep driving your own car, there is no extra driver to book, and you only pay for the trailer for the days you need it. With No Strings Attached, you can also collect and return 24/7, so you are never racing a closing time.</p>
+            <h3>Which trailer size is right for me?</h3>
+            <ul>
+              <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>8x5 caged box trailer:</b> best for house and unit moves, large furniture, whitegoods and big green waste clean ups.</span></li>
+              <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>7x5 caged box trailer:</b> ideal for tip runs, small moves, DIY supplies and weekend jobs. It is a little lighter and easier to manoeuvre.</span></li>
+              <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>Not sure?</b> Call 0447 943 160 and tell us what you are moving. We will recommend the best fit.</span></li>
+            </ul>
+          </div>
+          <div>
+            <h3>What can I carry in a box trailer?</h3>
+            <p>Our galvanised, caged trailers handle a wide range of everyday loads, including:</p>
+            <ul>
+              <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span>Sofas, beds, mattresses, tables and boxes</span></li>
+              <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span>Fridges, washing machines and other whitegoods</span></li>
+              <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span>Garden waste, branches, mulch, soil and turf</span></li>
+              <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span>Timber, pavers and renovation materials</span></li>
+              <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span>Camping gear, bikes and extra luggage</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="guide__more">
+          <div class="guide__grid">
+            <div>
+              <h3>How to hire a trailer with NSA</h3>
+              <p>Booking takes a few minutes. Choose your trailer, select Upper Kedron or Gaythorne as your pickup location, then pick your dates. You will see your total before you confirm. Once booked, you receive secure access details so you can collect the trailer whenever it suits you, day or night.</p>
+              <h3>Before you tow</h3>
+              <ul>
+                <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span>Make sure your vehicle has a suitable tow bar and compatible trailer plug.</span></li>
+                <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span>Check your vehicle's towing capacity in the owner's manual.</span></li>
+                <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span>Confirm the coupling is locked, the safety chain is attached and the lights work.</span></li>
+                <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span>Allow extra braking distance and take corners wider than usual.</span></li>
+              </ul>
+            </div>
+            <div>
+              <h3>Loading tips for a safe trip</h3>
+              <ul>
+                <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span>Place the heaviest items low and slightly forward of the axle.</span></li>
+                <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span>Spread the weight evenly from side to side.</span></li>
+                <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span>Restrain every item with ratchet straps or rope so nothing can shift.</span></li>
+                <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span>Cover and secure loose loads such as green waste, soil and mulch.</span></li>
+              </ul>
+              <h3>How much does trailer hire cost?</h3>
+              <p>Your price depends on the trailer size and how long you need it. Each hire day is a full 24 hours, and multi day hires are discounted, so a weekend move often costs less per day than a single day hire. Your full total is always shown upfront before you confirm.</p>
+              <h3>Local trailer hire on Brisbane's north side</h3>
+              <p>With pickup points in Upper Kedron and Gaythorne, NSA is close to Ferny Grove, The Gap, Keperra, Mitchelton, Enoggera, Arana Hills, Everton Park, Alderley and surrounding suburbs. Book online, collect when it suits you and get moving with no strings attached.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="guide__fade" aria-hidden="true"></div>
+      <div class="guide__actions">
+        <button class="btn btn--dark guide__toggle" type="button" aria-expanded="false" aria-controls="guide-body"><span class="guide__label">Read More</span> <span class="guide__chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></span></button>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CTA -->
 <section class="section">
   <div class="container">
