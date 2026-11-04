@@ -93,7 +93,7 @@ p{margin:0 0 1em}
 .logo img{height:46px;width:auto;transition:height .4s var(--ease)}
 .site-header.is-scrolled .logo img{height:40px}
 .nav{display:flex;align-items:center;gap:6px;margin:0;padding:0;list-style:none}
-.nav a{position:relative;display:block;padding:10px 16px;font-weight:500;font-size:.98rem;color:#E8E9EC;transition:color .3s}
+.nav a{position:relative;display:block;white-space:nowrap;padding:10px 16px;font-weight:500;font-size:.98rem;color:#E8E9EC;transition:color .3s}
 .nav a::after{content:"";position:absolute;left:16px;right:16px;bottom:4px;height:2px;background:var(--brand);transform:scaleX(0);transform-origin:right;transition:transform .4s var(--ease)}
 .nav a:hover,.nav a.is-active{color:var(--white)}
 .nav a:hover::after,.nav a.is-active::after{transform:scaleX(1);transform-origin:left}
@@ -344,6 +344,9 @@ form.is-sent .form-success{display:block;animation:fadeUp .6s var(--ease)}
 }
 
 /* ================= Responsive ================= */
+@media (max-width:1320px){
+  .header-call .header-call__text{display:none}
+}
 @media (max-width:1200px){
   .nav a{padding:10px 11px}
   .header-call small{display:none}
