@@ -12,7 +12,7 @@ add_action( 'after_setup_theme', function () {
 } );
 
 add_action( 'wp_enqueue_scripts', function () {
-	$ver = wp_get_theme()->get( 'Version' );
+	$ver = wp_get_theme()->get( 'Version' ) . '.' . filemtime( get_template_directory() . '/nsa.css' );
 	wp_enqueue_style( 'nsa-fonts', 'https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Inter:wght@400;500;600;700&display=swap', array(), null );
 	wp_enqueue_style( 'nsa-main', get_template_directory_uri() . '/nsa.css', array( 'nsa-fonts' ), $ver );
 	wp_enqueue_script( 'nsa-main', get_template_directory_uri() . '/nsa.js', array(), $ver, true );
