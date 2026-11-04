@@ -122,7 +122,7 @@ a:hover > .icon-circle,.icon-circle:hover{background:var(--brand);color:var(--in
 /* ================= Hero ================= */
 .hero{position:relative;color:var(--white);background:var(--ink);overflow:hidden;isolation:isolate}
 .hero__bg{position:absolute;inset:-8% 0 0;z-index:-2;background-size:cover;background-position:center 40%;transform:scale(1.06);will-change:transform}
-.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(100deg,rgba(10,11,13,.96) 0%,rgba(10,11,13,.86) 42%,rgba(10,11,13,.55) 100%),linear-gradient(0deg,rgba(10,11,13,.9),transparent 40%)}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(100deg,rgba(10,11,13,.92) 0%,rgba(10,11,13,.72) 45%,rgba(10,11,13,.35) 100%),linear-gradient(0deg,rgba(10,11,13,.85),transparent 45%)}
 .hero__grid{display:grid;grid-template-columns:1.12fr .88fr;gap:clamp(40px,5vw,90px);align-items:center;padding-block:clamp(70px,8vw,120px) clamp(80px,9vw,140px)}
 .hero h1{margin-bottom:24px}
 .hero h1 em{font-style:normal;color:var(--brand);position:relative;white-space:nowrap}
