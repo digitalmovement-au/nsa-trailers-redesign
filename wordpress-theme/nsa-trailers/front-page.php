@@ -26,6 +26,12 @@ get_header(); ?>
   </div>
 </section>
 
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span class="marquee__item">24/7 Contactless Pickup</span><span class="marquee__item">Book Online In Minutes</span><span class="marquee__item">Upper Kedron</span><span class="marquee__item">Gaythorne</span><span class="marquee__item">Multi Day Discounts</span><span class="marquee__item">Galvanised Caged Trailers</span><span class="marquee__item">No Hidden Fees</span><span class="marquee__item">24/7 Contactless Pickup</span><span class="marquee__item">Book Online In Minutes</span><span class="marquee__item">Upper Kedron</span><span class="marquee__item">Gaythorne</span><span class="marquee__item">Multi Day Discounts</span><span class="marquee__item">Galvanised Caged Trailers</span><span class="marquee__item">No Hidden Fees</span>
+  </div>
+</div>
+
 <section class="stats-band">
   <div class="container">
     <div class="section-head center">
@@ -42,41 +48,8 @@ get_header(); ?>
   </div>
 </section>
 
-<div class="marquee" aria-hidden="true">
-  <div class="marquee__track">
-    <span class="marquee__item">24/7 Contactless Pickup</span><span class="marquee__item">Book Online In Minutes</span><span class="marquee__item">Upper Kedron</span><span class="marquee__item">Gaythorne</span><span class="marquee__item">Multi Day Discounts</span><span class="marquee__item">Galvanised Caged Trailers</span><span class="marquee__item">No Hidden Fees</span><span class="marquee__item">24/7 Contactless Pickup</span><span class="marquee__item">Book Online In Minutes</span><span class="marquee__item">Upper Kedron</span><span class="marquee__item">Gaythorne</span><span class="marquee__item">Multi Day Discounts</span><span class="marquee__item">Galvanised Caged Trailers</span><span class="marquee__item">No Hidden Fees</span>
-  </div>
-</div>
-
-<!-- ABOUT -->
-<section class="section" id="about">
-  <div class="container">
-    <div class="section-head center">
-      <span class="eyebrow reveal">About No Strings Attached</span>
-      <h2 data-split>The simplest way to hire a trailer in Brisbane.</h2>
-      <p class="lead reveal">No counters, no queues and no fine print surprises. NSA gives you reliable, secure trailer hire with smart access, so you collect when it suits you and get on with your day.</p>
-    </div>
-    <div class="split">
-      <div class="media-stack reveal reveal--left">
-        <span class="media-stack__tag">Locally owned in Brisbane</span>
-        <div class="media-stack__main"><img data-parallax src="https://cdn.lockii.app/2320e099-0bde-4f87-959a-b93867286022.png?class=lg" alt="Galvanised 8x5 box trailer ready for hire at NSA Trailers Brisbane" loading="lazy"></div>
-        <div class="media-stack__float"><strong>24/7</strong><span>Pick up and drop off on your schedule, not ours.</span></div>
-      </div>
-      <div>
-        <ul class="feature-list feature-list--cards">
-          <li class="reveal"><span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></span><div><h4>Easy online booking</h4><p>Choose a trailer, pick your dates and confirm in a few taps.</p></div></li>
-          <li class="reveal"><span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6M15.5 7.5l3 3L22 7l-3-3"/></svg></span><div><h4>Secure, contactless access</h4><p>Receive your access details and collect at any hour.</p></div></li>
-          <li class="reveal"><span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L2 12V2h10l8.6 8.6a2 2 0 0 1 0 2.8z"/><circle cx="7" cy="7" r="1.5"/></svg></span><div><h4>Honest, upfront pricing</h4><p>See your full total before you confirm, with discounts on multi day hires.</p></div></li>
-          <li class="reveal"><span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span><div><h4>Checked before every hire</h4><p>Every trailer is inspected and road ready before you collect it.</p></div></li>
-        </ul>
-        <a class="btn btn--dark reveal" href="#fleet">Explore the Fleet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- FLEET -->
-<section class="section section--paper2" id="fleet">
+<section class="section" id="fleet">
   <div class="container">
     <div class="section-head center">
       <span class="eyebrow reveal">Our Rental Range</span>
@@ -102,6 +75,33 @@ get_header(); ?>
           <div class="fleet-card__cta"><span>Check availability</span><span class="arrow-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span></div>
         </div>
       </a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section section--paper2" id="about">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow reveal">About No Strings Attached</span>
+      <h2 data-split>The simplest way to hire a trailer in Brisbane.</h2>
+      <p class="lead reveal">No counters, no queues and no fine print surprises. NSA gives you reliable, secure trailer hire with smart access, so you collect when it suits you and get on with your day.</p>
+    </div>
+    <div class="split">
+      <div class="media-stack reveal reveal--left">
+        <span class="media-stack__tag">Locally owned in Brisbane</span>
+        <div class="media-stack__main"><img data-parallax src="https://cdn.lockii.app/2320e099-0bde-4f87-959a-b93867286022.png?class=lg" alt="Galvanised 8x5 box trailer ready for hire at NSA Trailers Brisbane" loading="lazy"></div>
+        <div class="media-stack__float"><strong>24/7</strong><span>Pick up and drop off on your schedule, not ours.</span></div>
+      </div>
+      <div>
+        <ul class="feature-list feature-list--cards">
+          <li class="reveal"><span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></span><div><h4>Easy online booking</h4><p>Choose a trailer, pick your dates and confirm in a few taps.</p></div></li>
+          <li class="reveal"><span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6M15.5 7.5l3 3L22 7l-3-3"/></svg></span><div><h4>Secure, contactless access</h4><p>Receive your access details and collect at any hour.</p></div></li>
+          <li class="reveal"><span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L2 12V2h10l8.6 8.6a2 2 0 0 1 0 2.8z"/><circle cx="7" cy="7" r="1.5"/></svg></span><div><h4>Honest, upfront pricing</h4><p>See your full total before you confirm, with discounts on multi day hires.</p></div></li>
+          <li class="reveal"><span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span><div><h4>Checked before every hire</h4><p>Every trailer is inspected and road ready before you collect it.</p></div></li>
+        </ul>
+        <a class="btn btn--dark reveal" href="#fleet">Explore the Fleet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      </div>
     </div>
   </div>
 </section>
@@ -187,13 +187,14 @@ get_header(); ?>
 
 <!-- FAQ -->
 <section class="section" id="faq">
-  <div class="container">
-    <div class="section-head center">
+  <div class="container faq-wrap">
+    <div class="section-head faq-wrap__head">
       <span class="eyebrow reveal">Frequently Asked Questions</span>
       <h2 data-split>Everything you need to know.</h2>
       <p class="lead reveal">Still unsure? Our team is happy to help you pick the right trailer.</p>
+      <a class="btn btn--dark reveal" href="#contact">Ask a Question <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
     </div>
-    <div class="faq faq--center reveal">
+    <div class="faq reveal">
       <details open><summary>What trailers can I hire from No Strings Attached?<span class="plus" aria-hidden="true"></span></summary><div class="faq__body"><p>We offer trailer hire in Upper Kedron and Gaythorne. Our fleet includes 8x5 and 7x5 galvanised caged box trailers, perfect for moving, projects and weekend getaways.</p></div></details>
       <details><summary>How does trailer hire work per day?<span class="plus" aria-hidden="true"></span></summary><div class="faq__body"><p>Our daily hire period is 24 hours. You will see your total before confirming your booking. Rates vary by trailer and longer hires are discounted.</p></div></details>
       <details><summary>Where do I collect my trailer?<span class="plus" aria-hidden="true"></span></summary><div class="faq__body"><p>Pick up your trailer at Upper Kedron or Gaythorne. Book online, receive your secure access details and collect your trailer at your convenience. Call 0447 943 160 for assistance.</p></div></details>
@@ -201,7 +202,6 @@ get_header(); ?>
       <details><summary>Are there discounts for longer hires?<span class="plus" aria-hidden="true"></span></summary><div class="faq__body"><p>Yes. We offer discounts for multi day and extended trailer hires. The total depends on the trailer and duration, so check your dates on the booking form or contact us for details.</p></div></details>
       <details><summary>Need help picking a trailer?<span class="plus" aria-hidden="true"></span></summary><div class="faq__body"><p>If you are not sure which trailer is right for your job, just ask. Our team is happy to help you choose the best fit.</p></div></details>
     </div>
-    <div class="center" style="margin-top:44px"><a class="btn btn--dark reveal" href="#contact">Ask a Question <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></div>
   </div>
 </section>
 

@@ -1,4 +1,5 @@
 <section class="section contact" id="contact">
+  <div class="contact__glow" aria-hidden="true"></div>
   <div class="container">
     <div class="section-head center">
       <span class="eyebrow reveal">Get In Touch</span>

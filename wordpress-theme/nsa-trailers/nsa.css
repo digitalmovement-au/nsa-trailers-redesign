@@ -61,19 +61,30 @@ p{margin:0 0 1em}
 .section-head--split p{margin:0;color:var(--muted)}
 .lead{font-size:clamp(1.05rem,1.2vw,1.22rem);color:var(--muted)}
 
-/* Buttons: all solid, no transparent backgrounds */
-.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:17px 30px;border-radius:999px;font-weight:600;font-size:1rem;border:0;cursor:pointer;overflow:hidden;isolation:isolate;transition:transform .4s var(--ease),box-shadow .4s var(--ease),color .3s;white-space:nowrap}
-.btn svg{width:18px;height:18px;flex:none;transition:transform .4s var(--ease)}
-.btn::after{content:"";position:absolute;inset:0;z-index:-1;transform:translateY(101%);transition:transform .45s var(--ease);border-radius:inherit}
-.btn:hover{transform:translateY(-2px)}
-.btn:hover::after{transform:translateY(0)}
-.btn:hover svg{transform:translateX(4px)}
-.btn--brand{background:var(--brand);color:var(--brand-ink);box-shadow:0 14px 30px -12px rgba(255,212,0,.6)}
-.btn--brand::after{background:var(--white)}
-.btn--dark{background:var(--ink);color:var(--white)}
-.btn--dark::after{background:var(--ink-4)}
-.btn--white{background:var(--white);color:var(--ink)}
+/* Buttons: all solid, no transparent backgrounds. Cursor-following fill, lift, glow, shine. */
+.btn{--x:50%;--y:50%;position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:17px 30px;border-radius:999px;font-weight:600;font-size:1rem;border:0;cursor:pointer;overflow:hidden;isolation:isolate;transition:transform .45s var(--ease),box-shadow .45s var(--ease),color .35s ease;white-space:nowrap;will-change:transform}
+.btn svg{width:18px;height:18px;flex:none;transition:transform .45s var(--ease)}
+.btn::after{content:"";position:absolute;left:var(--x);top:var(--y);width:260%;aspect-ratio:1;border-radius:50%;z-index:-1;transform:translate(-50%,-50%) scale(0);transition:transform .6s var(--ease)}
+.btn::before{content:"";position:absolute;top:0;left:-75%;width:45%;height:100%;z-index:1;pointer-events:none;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);transition:left 0s}
+.btn:hover{transform:translateY(-3px)}
+.btn:hover::after{transform:translate(-50%,-50%) scale(1)}
+.btn:hover::before{left:135%;transition:left .8s ease}
+.btn:hover svg{transform:translateX(5px)}
+.btn:hover svg:first-child:not(:last-child){transform:rotate(-12deg) scale(1.12)}
+.btn:active{transform:translateY(0) scale(.97);transition-duration:.15s}
+.btn--brand{background:var(--brand);color:var(--brand-ink);box-shadow:0 14px 30px -12px rgba(255,212,0,.65)}
+.btn--brand::after{background:var(--ink)}
+.btn--brand:hover{color:var(--white);box-shadow:0 22px 40px -14px rgba(255,212,0,.85),0 0 0 4px rgba(255,212,0,.25)}
+.btn--brand:hover svg{color:var(--brand)}
+.hero .btn--brand::after,.section--dark .btn--brand::after,.stats-band .btn--brand::after{background:var(--white)}
+.hero .btn--brand:hover,.section--dark .btn--brand:hover{color:var(--ink)}
+.hero .btn--brand:hover svg,.section--dark .btn--brand:hover svg{color:var(--ink)}
+.btn--dark{background:var(--ink);color:var(--white);box-shadow:0 14px 30px -14px rgba(10,11,13,.6)}
+.btn--dark::after{background:var(--brand)}
+.btn--dark:hover{color:var(--ink);box-shadow:0 22px 40px -16px rgba(10,11,13,.55),0 0 0 4px rgba(255,212,0,.35)}
+.btn--white{background:var(--white);color:var(--ink);box-shadow:0 14px 30px -16px rgba(0,0,0,.4)}
 .btn--white::after{background:var(--brand)}
+.btn--white:hover{box-shadow:0 22px 40px -16px rgba(255,212,0,.7)}
 .btn--block{width:100%}
 .btn--sm{padding:12px 22px;font-size:.92rem}
 
@@ -428,10 +439,6 @@ form.is-sent .form-success{display:block;animation:fadeUp .6s var(--ease)}
 .footer-bottom ul{display:flex;gap:24px;list-style:none;margin:0;padding:0}
 
 /* Floating call (mobile) */
-.float-call{position:fixed;left:50%;bottom:18px;z-index:80;transform:translate(-50%,140%);display:none;align-items:center;gap:12px;background:var(--brand);color:var(--ink);font-weight:700;padding:10px 26px 10px 10px;border-radius:999px;box-shadow:0 18px 40px -10px rgba(0,0,0,.55);transition:transform .5s var(--ease)}
-.float-call.is-visible{transform:translate(-50%,0)}
-.float-call .icon-circle{width:40px;height:40px;background:var(--ink);border-color:var(--ink)}
-.float-call .icon-circle::before{border-color:var(--ink)}
 
 /* ================= Landing page extras ================= */
 .breadcrumbs{display:flex;gap:10px;align-items:center;font-size:.88rem;color:var(--muted-d);margin-bottom:26px;list-style:none;padding:0}
@@ -455,6 +462,92 @@ form.is-sent .form-success{display:block;animation:fadeUp .6s var(--ease)}
 .compare tr:last-child td{border-bottom:0}
 .compare .yes{color:#1C7A4A}.compare .no{color:#B3261E}
 .table-scroll{overflow-x:auto;border-radius:var(--radius-lg)}
+
+
+/* ================= FAQ sticky two columns ================= */
+.faq-wrap__head{position:sticky;top:130px;align-self:start}
+.faq-wrap__head .btn{margin-top:10px}
+
+/* ================= Contact (stands apart from footer) ================= */
+.contact{position:relative;overflow:hidden;isolation:isolate;color:var(--ink);background:linear-gradient(135deg,#FFE352 0%,var(--brand) 40%,#FFB300 100%)}
+.contact::before{content:"";position:absolute;inset:0;z-index:-1;background-image:radial-gradient(rgba(20,17,0,.14) 1.2px,transparent 1.2px);background-size:22px 22px;-webkit-mask:linear-gradient(180deg,#000,transparent 70%);mask:linear-gradient(180deg,#000,transparent 70%)}
+.contact__glow{position:absolute;z-index:-1;right:-12%;top:-30%;width:55%;aspect-ratio:1;border-radius:50%;background:radial-gradient(closest-side,rgba(255,255,255,.55),transparent);animation:floaty 10s ease-in-out infinite}
+.contact::after{content:"";position:absolute;z-index:-1;left:-10%;bottom:-35%;width:45%;aspect-ratio:1;border-radius:50%;border:2px solid rgba(20,17,0,.12);box-shadow:0 0 0 40px rgba(20,17,0,.04)}
+.contact .eyebrow{color:var(--ink)}
+.contact .eyebrow::before{background:var(--ink);box-shadow:0 0 0 4px rgba(20,17,0,.15)}
+.contact .lead,.contact .section-head p{color:#3B3400}
+.contact h2{color:var(--ink)}
+.contact__list a,.contact__list div{background:var(--ink);color:var(--white);border-color:var(--ink);box-shadow:0 18px 36px -22px rgba(20,17,0,.8)}
+.contact__list a:hover{border-color:var(--white);transform:translateX(6px)}
+.contact .map{border:4px solid var(--white);box-shadow:0 24px 50px -28px rgba(20,17,0,.8)}
+.contact .form-card{box-shadow:0 40px 80px -40px rgba(20,17,0,.75)}
+.contact .form-card::before{display:none}
+
+/* ================= Scroll to top ================= */
+.to-top{position:fixed;right:24px;bottom:24px;z-index:85;width:56px;height:56px;border:0;padding:0;border-radius:50%;background:var(--ink);color:var(--brand);cursor:pointer;display:grid;place-items:center;opacity:0;visibility:hidden;transform:translateY(30px) scale(.6) rotate(-90deg);transition:opacity .4s,visibility .4s,transform .6s var(--ease),background .3s,color .3s;box-shadow:0 16px 34px -12px rgba(0,0,0,.55)}
+.to-top.is-visible{opacity:1;visibility:visible;transform:none}
+.to-top__ring{position:absolute;inset:2px;width:52px;height:52px;transform:rotate(-90deg)}
+.to-top__ring circle{fill:none;stroke:var(--ink-4);stroke-width:3}
+.to-top__ring .to-top__progress{stroke:var(--brand);stroke-linecap:round;stroke-dasharray:150.8;stroke-dashoffset:150.8;transition:stroke-dashoffset .15s linear}
+.to-top__arrow{display:grid;place-items:center}
+.to-top__arrow svg{width:20px;height:20px}
+.to-top:hover{background:var(--brand);color:var(--ink)}
+.to-top:hover .to-top__ring .to-top__progress{stroke:var(--ink)}
+.to-top:hover .to-top__arrow{animation:bounceUp .8s var(--ease) infinite}
+@keyframes bounceUp{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+
+/* ================= Mobile dock: Call + glowing Book Now ================= */
+.mobile-dock{position:fixed;left:50%;bottom:14px;z-index:84;display:none;align-items:center;gap:8px;padding:7px;border-radius:999px;background:var(--ink);box-shadow:0 20px 44px -12px rgba(0,0,0,.6),0 0 0 1px var(--ink-4);transform:translate(-50%,160%);transition:transform .6s var(--ease)}
+.mobile-dock.is-visible{transform:translate(-50%,0)}
+.mobile-dock__call{display:inline-flex;align-items:center;gap:8px;color:var(--white);font-weight:600;padding:0 14px 0 2px}
+.mobile-dock__call .icon-circle{width:42px;height:42px}
+.mobile-dock__book{position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:8px;background:var(--brand);color:var(--ink);font-weight:800;font-size:1.02rem;padding:14px 24px;border-radius:999px;animation:dockGlow 1.8s ease-in-out infinite}
+.mobile-dock__book svg{width:18px;height:18px;animation:nudge 1.8s ease-in-out infinite}
+.mobile-dock__book::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.75),transparent);transform:skewX(-20deg);animation:qfshine 2.6s ease-in-out infinite}
+@keyframes dockGlow{0%,100%{box-shadow:0 0 0 0 rgba(255,212,0,.65),0 0 18px 2px rgba(255,212,0,.45)}50%{box-shadow:0 0 0 9px rgba(255,212,0,0),0 0 32px 8px rgba(255,212,0,.75)}}
+@keyframes nudge{0%,100%{transform:translateX(0)}50%{transform:translateX(4px)}}
+.menu-open .mobile-dock,.menu-open .to-top{opacity:0;pointer-events:none}
+
+@media (max-width:1024px){
+  .mobile-dock{display:flex}
+  .to-top{width:48px;height:48px;right:14px;bottom:86px}
+  .to-top__ring{width:44px;height:44px}
+  .faq-wrap__head{position:static}
+  /* Banner image: full width and clearly visible on mobile */
+  .hero__bg{inset:0 0 auto 0;height:min(78vw,440px);transform:none!important;background-position:center 55%}
+  .hero::before{background:linear-gradient(180deg,rgba(10,11,13,.1) 0%,rgba(10,11,13,.25) calc(min(78vw,440px) * .55),var(--ink) min(78vw,440px),var(--ink) 100%)}
+  .hero__grid{padding-top:calc(min(78vw,440px) - 90px)}
+}
+
+/* ================= Mobile centring ================= */
+@media (max-width:720px){
+  .hero__content{text-align:center}
+  .hero__badge{margin-inline:auto}
+  .hero__lead{margin-inline:auto}
+  .hero__ctas{justify-content:center}
+  .hero__trust{justify-content:center}
+  .breadcrumbs{justify-content:center}
+  .faq-wrap__head{text-align:center}
+  .fleet-card__body{text-align:center}
+  .fleet-card__top{justify-content:center}
+  .tags{justify-content:center}
+  .service-card{text-align:center}
+  .service-card__fits{justify-content:center;width:max-content;max-width:100%;margin-inline:auto;text-align:left}
+  .service-card__foot{justify-content:center}
+  .loc-card__body{text-align:center}
+  .pill{margin-inline:auto}
+  .loc-card__row{flex-direction:column}
+  #about .btn,#about + * .btn{display:flex}
+  .split .btn{width:100%}
+  .cta-band__btns .btn{flex:1 1 100%}
+  .footer-grid{text-align:center}
+  .footer-brand img,.footer-brand p{margin-inline:auto}
+  .socials{justify-content:center}
+  .footer-bottom{align-items:center;text-align:center}
+  .footer-bottom ul{justify-content:center}
+  .media-stack__float{left:50%;right:auto;transform:translateX(-50%);text-align:center;bottom:-24px;animation:none}
+  .media-stack{margin-bottom:30px}
+}
 
 /* ================= Reveal animations (not used in hero) ================= */
 .reveal{opacity:0;transform:translateY(40px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
@@ -491,8 +584,7 @@ form.is-sent .form-success{display:block;animation:fadeUp .6s var(--ease)}
   .faq-wrap .section-head{position:static}
   .media-stack__float{right:12px}
   .media-stack__tag{left:12px}
-  .float-call{display:inline-flex}
-  .site-footer{padding-bottom:80px}
+    .site-footer{padding-bottom:100px}
 }
 @media (max-width:720px){
   body{font-size:16px}
@@ -504,3 +596,6 @@ form.is-sent .form-success{display:block;animation:fadeUp .6s var(--ease)}
   .faq__body{padding-right:0}
   .compare th,.compare td{padding:16px 16px;font-size:.92rem}
 }
+.hero__grid > *{min-width:0}
+.mobile-dock a{white-space:nowrap}
+@media (max-width:720px){.hero__badge{font-size:.82rem;max-width:100%}.hero h1 em{white-space:normal}}

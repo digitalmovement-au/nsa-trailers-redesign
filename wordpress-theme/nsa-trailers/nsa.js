@@ -6,7 +6,9 @@
   /* Sticky header + progress bar + floating call */
   var header = document.querySelector('.site-header');
   var progress = document.querySelector('.progress');
-  var floatCall = document.querySelector('.float-call');
+  var floatCall = document.querySelector('.mobile-dock');
+  var toTop = document.querySelector('.to-top');
+  var ring = document.querySelector('.to-top__progress');
   var heroBg = document.querySelector('.hero__bg');
   var parallaxImgs = document.querySelectorAll('[data-parallax]');
   var ticking = false;
@@ -16,6 +18,8 @@
     if (header) header.classList.toggle('is-scrolled', y > 40);
     if (progress) progress.style.transform = 'scaleX(' + (h > 0 ? y / h : 0) + ')';
     if (floatCall) floatCall.classList.toggle('is-visible', y > 300);
+    if (toTop) toTop.classList.toggle('is-visible', y > 600);
+    if (ring) ring.style.strokeDashoffset = 150.8 * (1 - (h > 0 ? y / h : 0));
     if (!reduce) {
       if (heroBg && y < window.innerHeight * 1.2) heroBg.style.transform = 'scale(1.06) translateY(' + y * 0.25 + 'px)';
       parallaxImgs.forEach(function (img) {
@@ -113,6 +117,20 @@
       ev.preventDefault();
       f.classList.add('is-sent');
     });
+  });
+
+  /* Scroll to top */
+  if (toTop) toTop.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' }); });
+
+  /* CTA hover: fill grows from the cursor position */
+  document.querySelectorAll('.btn').forEach(function (b) {
+    function setPos(e) {
+      var r = b.getBoundingClientRect();
+      b.style.setProperty('--x', (e.clientX - r.left) + 'px');
+      b.style.setProperty('--y', (e.clientY - r.top) + 'px');
+    }
+    b.addEventListener('mouseenter', setPos);
+    b.addEventListener('mouseleave', setPos);
   });
 
   /* Year */

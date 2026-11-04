@@ -28,6 +28,12 @@ get_header(); ?>
   </div>
 </section>
 
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span class="marquee__item">24/7 Contactless Pickup</span><span class="marquee__item">Book Online In Minutes</span><span class="marquee__item">Upper Kedron</span><span class="marquee__item">Gaythorne</span><span class="marquee__item">Multi Day Discounts</span><span class="marquee__item">Galvanised Caged Trailers</span><span class="marquee__item">No Hidden Fees</span><span class="marquee__item">24/7 Contactless Pickup</span><span class="marquee__item">Book Online In Minutes</span><span class="marquee__item">Upper Kedron</span><span class="marquee__item">Gaythorne</span><span class="marquee__item">Multi Day Discounts</span><span class="marquee__item">Galvanised Caged Trailers</span><span class="marquee__item">No Hidden Fees</span>
+  </div>
+</div>
+
 <section class="stats-band">
   <div class="container">
     <div class="section-head center">
@@ -43,12 +49,6 @@ get_header(); ?>
     </div>
   </div>
 </section>
-
-<div class="marquee" aria-hidden="true">
-  <div class="marquee__track">
-    <span class="marquee__item">24/7 Contactless Pickup</span><span class="marquee__item">Book Online In Minutes</span><span class="marquee__item">Upper Kedron</span><span class="marquee__item">Gaythorne</span><span class="marquee__item">Multi Day Discounts</span><span class="marquee__item">Galvanised Caged Trailers</span><span class="marquee__item">No Hidden Fees</span><span class="marquee__item">24/7 Contactless Pickup</span><span class="marquee__item">Book Online In Minutes</span><span class="marquee__item">Upper Kedron</span><span class="marquee__item">Gaythorne</span><span class="marquee__item">Multi Day Discounts</span><span class="marquee__item">Galvanised Caged Trailers</span><span class="marquee__item">No Hidden Fees</span>
-  </div>
-</div>
 
 <!-- INTRO / SEO COPY -->
 <section class="section">
@@ -197,13 +197,14 @@ get_header(); ?>
 
 <!-- FAQ -->
 <section class="section section--paper2" id="faq">
-  <div class="container">
-    <div class="section-head center">
+  <div class="container faq-wrap">
+    <div class="section-head faq-wrap__head">
       <span class="eyebrow reveal">Trailer Hire FAQs</span>
       <h2 data-split>Brisbane trailer hire questions, answered.</h2>
       <p class="lead reveal">Cannot find what you are looking for? Reach out and we will help.</p>
-      </div>
-    <div class="faq faq--center reveal">
+        <a class="btn btn--dark reveal" href="tel:+61447943160"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg> Call 0447 943 160</a>
+    </div>
+    <div class="faq reveal">
       <details open><summary>How much does trailer hire cost in Brisbane?<span class="plus" aria-hidden="true"></span></summary><div class="faq__body"><p>Pricing depends on the trailer size and how many days you need it. Your full total is shown before you confirm, and multi day hires are discounted. Contact us for a quick quote.</p></div></details>
       <details><summary>Can I pick up a trailer after hours?<span class="plus" aria-hidden="true"></span></summary><div class="faq__body"><p>Yes. Both our Upper Kedron and Gaythorne locations offer 24/7 contactless pickup and return using secure access details sent when you book.</p></div></details>
       <details><summary>What size trailer do I need to move house?<span class="plus" aria-hidden="true"></span></summary><div class="faq__body"><p>For most house and unit moves the 8x5 caged box trailer is the best choice. For smaller loads, tip runs and DIY supplies the 7x5 is easier to tow and manoeuvre.</p></div></details>
@@ -212,7 +213,6 @@ get_header(); ?>
       <details><summary>How long is a trailer hire day?<span class="plus" aria-hidden="true"></span></summary><div class="faq__body"><p>Each hire day is a full 24 hours from your pickup time, so you are not rushing to return before closing time.</p></div></details>
       <details><summary>Which suburbs do you service?<span class="plus" aria-hidden="true"></span></summary><div class="faq__body"><p>We are based in Upper Kedron and Gaythorne and regularly help customers from Ferny Grove, The Gap, Keperra, Mitchelton, Enoggera, Arana Hills, Everton Park, Alderley and surrounding north Brisbane suburbs.</p></div></details>
     </div>
-    <div class="center" style="margin-top:44px"><a class="btn btn--dark reveal" href="tel:+61447943160"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg> Call 0447 943 160</a></div>
   </div>
 </section>
 
