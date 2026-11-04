@@ -22,6 +22,7 @@ get_header(); ?>
         <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>No hidden fees</li>
       </ul>
     </div>
+    <div class="hero__media" role="img" aria-label="NSA galvanised box trailers ready for hire in Brisbane" style="background-image:url('https://cdn.lockii.app/2320e099-0bde-4f87-959a-b93867286022.png?class=lg')"></div>
     <div class="hero__form">
       <?php get_template_part( 'part-hero-form' ); ?>
     </div>
@@ -88,20 +89,22 @@ get_header(); ?>
     </div>
     <div class="fleet-grid">
       <a class="fleet-card reveal" href="#quote" aria-label="Hire the 8x5 Box Trailer">
-        <div class="fleet-card__media"><span class="fleet-card__chip">Most popular</span><img src="https://cdn.lockii.app/2320e099-0bde-4f87-959a-b93867286022.png?class=lg" alt="8x5 box trailer hire Brisbane" loading="lazy"></div>
+        <div class="fleet-card__media"><span class="fleet-card__size">8x5<small>ft</small></span><span class="fleet-card__chip">Most popular</span><img src="https://cdn.lockii.app/2320e099-0bde-4f87-959a-b93867286022.png?class=lg" alt="8x5 box trailer hire Brisbane" loading="lazy"></div>
         <div class="fleet-card__body">
           <h3>8x5 Caged Box Trailer Hire</h3>
           <p>Maximum space for house moves, bulky furniture, whitegoods and large green waste loads.</p>
           <ul class="tags"><li>Moving house</li><li>Furniture</li><li>Large loads</li></ul>
+          <ul class="fleet-card__specs"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>Galvanised</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>24/7 pickup</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L2 12V2h10l8.6 8.6a2 2 0 0 1 0 2.8z"/><circle cx="7" cy="7" r="1.5"/></svg>Multi day deals</li></ul>
           <div class="fleet-card__cta"><span>Book the 8x5</span><span class="arrow-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span></div>
         </div>
       </a>
       <a class="fleet-card reveal" href="#quote" aria-label="Hire the 7x5 Box Trailer" style="transition-delay:.12s">
-        <div class="fleet-card__media"><span class="fleet-card__chip">Easy to tow</span><img src="https://cdn.lockii.app/636c26be-ded8-49c7-9a54-d8475d29669a.png?class=lg" alt="7x5 box trailer hire Brisbane" loading="lazy"></div>
+        <div class="fleet-card__media"><span class="fleet-card__size">7x5<small>ft</small></span><span class="fleet-card__chip">Easy to tow</span><img src="https://cdn.lockii.app/636c26be-ded8-49c7-9a54-d8475d29669a.png?class=lg" alt="7x5 box trailer hire Brisbane" loading="lazy"></div>
         <div class="fleet-card__body">
           <h3>7x5 Caged Box Trailer Hire</h3>
           <p>A compact all rounder for tip runs, DIY supplies, small moves and weekend jobs.</p>
           <ul class="tags"><li>Tip runs</li><li>DIY</li><li>Small moves</li></ul>
+          <ul class="fleet-card__specs"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>Galvanised</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>24/7 pickup</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L2 12V2h10l8.6 8.6a2 2 0 0 1 0 2.8z"/><circle cx="7" cy="7" r="1.5"/></svg>Multi day deals</li></ul>
           <div class="fleet-card__cta"><span>Book the 7x5</span><span class="arrow-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span></div>
         </div>
       </a>
