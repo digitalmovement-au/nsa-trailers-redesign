@@ -59,8 +59,9 @@ get_header(); ?>
     </div>
     <div class="fleet-grid">
       <a class="fleet-card reveal" href="#quote" aria-label="Book the 8x5 Box Trailer">
-        <div class="fleet-card__media"><span class="fleet-card__chip">Most popular</span><img src="https://cdn.lockii.app/2320e099-0bde-4f87-959a-b93867286022.png?class=lg" alt="8x5 galvanised caged box trailer for hire in Brisbane" loading="lazy"></div>
+        <div class="fleet-card__media"><img src="https://cdn.lockii.app/2320e099-0bde-4f87-959a-b93867286022.png?class=lg" alt="8x5 galvanised caged box trailer for hire in Brisbane" loading="lazy"></div>
         <div class="fleet-card__body">
+          <span class="fleet-card__chip">Most popular</span>
           <div class="fleet-card__top"><h3>8x5 Box Trailer</h3></div>
           <p>Our largest box trailer with a high cage. Ideal for full house moves, furniture, appliances and big garden clean ups.</p>
           <ul class="tags"><li>House moves</li><li>Furniture</li><li>Green waste</li><li>Caged</li></ul>
@@ -69,8 +70,9 @@ get_header(); ?>
         </div>
       </a>
       <a class="fleet-card reveal" href="#quote" aria-label="Book the 7x5 Box Trailer" style="transition-delay:.12s">
-        <div class="fleet-card__media"><span class="fleet-card__chip">Great all rounder</span><img src="https://cdn.lockii.app/636c26be-ded8-49c7-9a54-d8475d29669a.png?class=lg" alt="7x5 galvanised caged box trailer for hire in Brisbane" loading="lazy"></div>
+        <div class="fleet-card__media"><img src="https://cdn.lockii.app/636c26be-ded8-49c7-9a54-d8475d29669a.png?class=lg" alt="7x5 galvanised caged box trailer for hire in Brisbane" loading="lazy"></div>
         <div class="fleet-card__body">
+          <span class="fleet-card__chip">Great all rounder</span>
           <div class="fleet-card__top"><h3>7x5 Box Trailer</h3></div>
           <p>Compact, easy to tow and manoeuvre. Perfect for small moves, tip runs, DIY projects and weekend jobs.</p>
           <ul class="tags"><li>Tip runs</li><li>Small moves</li><li>DIY projects</li><li>Caged</li></ul>

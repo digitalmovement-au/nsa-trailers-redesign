@@ -80,6 +80,122 @@ get_header(); ?>
   </div>
 </section>
 
+<!-- GUIDE (read more / read less) -->
+<section class="section section--paper2 guide-section" id="guide">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow reveal"><?php echo esc_html( $nsa_kw ); ?> Guide</span>
+      <h2 class="guide-title reveal">Everything you need to know about <span class="marker"><?php echo esc_html( $nsa_kw ); ?> <?php echo esc_html( $nsa_loc ); ?></span></h2>
+      <p class="lead reveal">Book, load and tow with confidence. Here is what <?php echo esc_html( $nsa_loc ); ?> locals ask us most.</p>
+    </div>
+    <div class="gbenefits">
+      <div class="gbenefit reveal" style="transition-delay:0.00s"><span class="gbenefit__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span><p>24/7 contactless pickup and return</p></div>
+      <div class="gbenefit reveal" style="transition-delay:0.08s"><span class="gbenefit__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span><p>Galvanised, caged trailers checked before every hire</p></div>
+      <div class="gbenefit reveal" style="transition-delay:0.16s"><span class="gbenefit__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L2 12V2h10l8.6 8.6a2 2 0 0 1 0 2.8z"/><circle cx="7" cy="7" r="1.5"/></svg></span><p>Your full total shown before you book</p></div>
+      <div class="gbenefit reveal" style="transition-delay:0.00s"><span class="gbenefit__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span><p>Discounts on multi day hires</p></div>
+      <div class="gbenefit reveal" style="transition-delay:0.08s"><span class="gbenefit__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></span><p>Two pickup points in Upper Kedron and Gaythorne</p></div>
+      <div class="gbenefit reveal" style="transition-delay:0.16s"><span class="gbenefit__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span><p>Friendly local support by phone, text or email</p></div>
+    </div>
+    <div class="guide reveal">
+      <nav class="guide__toc" aria-label="In this guide">
+        <small>In this guide</small>
+        <ol>
+            <li><a href="#guide-1"><span>01</span>Trailer vs van or ute</a></li>
+            <li><a href="#guide-2"><span>02</span>Choosing a size</a></li>
+            <li><a href="#guide-3"><span>03</span>What you can carry</a></li>
+            <li><a href="#guide-4"><span>04</span>How to book</a></li>
+            <li><a href="#guide-5"><span>05</span>Before you tow</a></li>
+            <li><a href="#guide-6"><span>06</span>Loading tips</a></li>
+            <li><a href="#guide-7"><span>07</span>Pricing</a></li>
+            <li><a href="#guide-8"><span>08</span>Local <?php echo esc_html( $nsa_kwl ); ?></a></li>
+        </ol>
+      </nav>
+      <div class="guide__main">
+        <div class="guide__body" id="guide-body">
+          <p>Finding reliable <?php echo esc_html( $nsa_kwl ); ?> in <?php echo esc_html( $nsa_loc ); ?> should be quick and simple. No Strings Attached gives <?php echo esc_html( $nsa_loc ); ?> locals secure, galvanised box trailers they can book online and collect 24/7 from Upper Kedron or Gaythorne, without queues, counters or paperwork.</p>
+          <p>Before you book, it helps to know the answers to a few common questions:</p>
+          <ul>
+            <li>Which trailer size suits my job?</li>
+            <li>What can I safely carry?</li>
+            <li>How do I collect and return the trailer?</li>
+            <li>How is <?php echo esc_html( $nsa_kwl ); ?> in <?php echo esc_html( $nsa_loc ); ?> priced?</li>
+            <li>What should I check before I tow?</li>
+          </ul>
+          <p class="guide__strong">This guide covers everything you need to hire, load and tow with confidence.</p>
+
+          <h3 id="guide-1">Why choose <?php echo esc_html( $nsa_kwl ); ?> in <?php echo esc_html( $nsa_loc ); ?> over a van or ute?</h3>
+          <p>For most moves, tip runs and weekend projects, a box trailer is the most affordable way to carry bulky items. You keep driving your own car, there is no extra driver to book, and you only pay for the days you need.</p>
+          <ul>
+            <li>Use your own car and tow bar</li>
+            <li>No extra driver or delivery fee</li>
+            <li>Collect and return any time, day or night</li>
+            <li>Discounted rates for multi day hires</li>
+          </ul>
+          <p class="guide__strong">A trailer gives you the space of a ute with the flexibility of your own schedule.</p>
+
+          <h3 id="guide-2">Choose the right trailer size</h3>
+          <p>NSA offers two galvanised, caged box trailers so you can match the trailer to the job.</p>
+          <ul>
+            <li><b>8x5 caged box trailer:</b> best for house and unit moves, large furniture, whitegoods and big green waste clean ups</li>
+            <li><b>7x5 caged box trailer:</b> ideal for tip runs, small moves, DIY supplies and weekend jobs</li>
+            <li><b>Not sure?</b> Call 0447 943 160 and tell us what you are moving</li>
+          </ul>
+
+          <h3 id="guide-3">What you can carry</h3>
+          <p>Our trailers handle a wide range of everyday loads around <?php echo esc_html( $nsa_loc ); ?>, including:</p>
+          <ul>
+            <li>Sofas, beds, mattresses, tables and boxes</li>
+            <li>Fridges, washing machines and other whitegoods</li>
+            <li>Garden waste, branches, mulch, soil and turf</li>
+            <li>Timber, pavers and renovation materials</li>
+            <li>Camping gear, bikes and extra luggage</li>
+          </ul>
+
+          <h3 id="guide-4">How to book <?php echo esc_html( $nsa_kwl ); ?> in <?php echo esc_html( $nsa_loc ); ?></h3>
+          <p>Booking takes a few minutes. Choose your trailer, select Upper Kedron or Gaythorne as your pickup point, then pick your dates. You will see your total before you confirm, and you receive secure access details to collect whenever it suits you.</p>
+          <ul>
+            <li>Pick your trailer and dates online</li>
+            <li>Confirm your booking and total</li>
+            <li>Unlock and collect with secure access</li>
+            <li>Return to the same location when you are done</li>
+          </ul>
+
+          <h3 id="guide-5">Before you tow</h3>
+          <ul>
+            <li>Make sure your vehicle has a suitable tow bar and compatible trailer plug</li>
+            <li>Check your vehicle's towing capacity in the owner's manual</li>
+            <li>Confirm the coupling is locked, the safety chain is attached and the lights work</li>
+            <li>Allow extra braking distance and take corners wider than usual</li>
+          </ul>
+
+          <h3 id="guide-6">Loading tips for a safe trip</h3>
+          <ul>
+            <li>Place the heaviest items low and slightly forward of the axle</li>
+            <li>Spread the weight evenly from side to side</li>
+            <li>Restrain every item with ratchet straps or rope</li>
+            <li>Cover and secure loose loads such as green waste, soil and mulch</li>
+          </ul>
+
+          <h3 id="guide-7">How much does <?php echo esc_html( $nsa_kwl ); ?> cost in <?php echo esc_html( $nsa_loc ); ?>?</h3>
+          <p>Your price depends on the trailer size and how long you need it. Each hire day is a full 24 hours, and multi day hires are discounted, so a weekend job often costs less per day than a single day hire.</p>
+          <p class="guide__strong">Your full total is always shown upfront before you confirm.</p>
+
+          <h3 id="guide-8">Local <?php echo esc_html( $nsa_kwl ); ?> in <?php echo esc_html( $nsa_loc ); ?></h3>
+          <p>With pickup points in Upper Kedron and Gaythorne, NSA is close to <?php echo esc_html( $nsa_loc ); ?> and nearby suburbs such as <?php echo esc_html( $nsa_sub_text ); ?>. Book online, collect when it suits you and get moving with no strings attached.</p>
+        </div>
+        <div class="guide__fade" aria-hidden="true"></div>
+        <div class="guide__actions">
+          <button class="guide__toggle" type="button" aria-expanded="false" aria-controls="guide-body"><span class="guide__label">Read more</span> <span class="guide__chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></span></button>
+        </div>
+      </div>
+      <div class="guide__cta">
+        <div><small>Best for</small><p><?php echo esc_html( $nsa_loc ); ?> locals moving house, clearing out junk or tackling weekend projects.</p></div>
+        <a class="btn btn--brand" href="#quote">Book a Trailer <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- INTRO / SEO COPY -->
 <section class="section">
   <div class="container">
@@ -118,8 +234,9 @@ get_header(); ?>
     </div>
     <div class="fleet-grid">
       <a class="fleet-card reveal" href="#quote" aria-label="Hire the 8x5 Box Trailer">
-        <div class="fleet-card__media"><span class="fleet-card__chip">Most popular</span><img src="https://cdn.lockii.app/2320e099-0bde-4f87-959a-b93867286022.png?class=lg" alt="8x5 caged box trailer, <?php echo esc_html( $nsa_kwl ); ?> <?php echo esc_html( $nsa_loc ); ?>" loading="lazy"></div>
+        <div class="fleet-card__media"><img src="https://cdn.lockii.app/2320e099-0bde-4f87-959a-b93867286022.png?class=lg" alt="8x5 caged box trailer, <?php echo esc_html( $nsa_kwl ); ?> <?php echo esc_html( $nsa_loc ); ?>" loading="lazy"></div>
         <div class="fleet-card__body">
+          <span class="fleet-card__chip">Most popular</span>
           <h3>8x5 Caged Box Trailer Hire</h3>
           <p>Maximum space for house moves, bulky furniture, whitegoods and large green waste loads.</p>
           <ul class="tags"><li>Moving house</li><li>Furniture</li><li>Large loads</li></ul>
@@ -128,8 +245,9 @@ get_header(); ?>
         </div>
       </a>
       <a class="fleet-card reveal" href="#quote" aria-label="Hire the 7x5 Box Trailer" style="transition-delay:.12s">
-        <div class="fleet-card__media"><span class="fleet-card__chip">Easy to tow</span><img src="https://cdn.lockii.app/636c26be-ded8-49c7-9a54-d8475d29669a.png?class=lg" alt="7x5 caged box trailer, <?php echo esc_html( $nsa_kwl ); ?> <?php echo esc_html( $nsa_loc ); ?>" loading="lazy"></div>
+        <div class="fleet-card__media"><img src="https://cdn.lockii.app/636c26be-ded8-49c7-9a54-d8475d29669a.png?class=lg" alt="7x5 caged box trailer, <?php echo esc_html( $nsa_kwl ); ?> <?php echo esc_html( $nsa_loc ); ?>" loading="lazy"></div>
         <div class="fleet-card__body">
+          <span class="fleet-card__chip">Great all rounder</span>
           <h3>7x5 Caged Box Trailer Hire</h3>
           <p>A compact all rounder for tip runs, DIY supplies, small moves and weekend jobs.</p>
           <ul class="tags"><li>Tip runs</li><li>DIY</li><li>Small moves</li></ul>
@@ -209,110 +327,6 @@ get_header(); ?>
       <div class="step" style="--d:0.0s"><span class="step__num">01</span><span class="step__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span><h3>Book online</h3><p>Choose your trailer, location and dates, then confirm your booking.</p></div>
       <div class="step" style="--d:0.9s"><span class="step__num">02</span><span class="step__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6M15.5 7.5l3 3L22 7l-3-3"/></svg></span><h3>Unlock and tow</h3><p>Use your secure access details to collect your trailer any time.</p></div>
       <div class="step" style="--d:1.8s"><span class="step__num">03</span><span class="step__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 7h14v8H2zM16 13h6"/><circle cx="7" cy="17" r="2"/><path d="M2 15h3M9 15h7"/></svg></span><h3>Return with ease</h3><p>Drop it back at the same location when your hire period ends.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- GUIDE (read more / read less) -->
-<section class="section section--dark guide-section" id="guide">
-  <div class="container">
-    <div class="section-head center">
-      <span class="eyebrow reveal"><?php echo esc_html( $nsa_kw ); ?> Guide</span>
-      <h2 class="guide-title reveal">Get moving sooner with <span class="outline-fill"><?php echo esc_html( $nsa_kw ); ?> <?php echo esc_html( $nsa_loc ); ?></span></h2>
-    </div>
-    <div class="guide-layout">
-      <div class="guide">
-        <div class="guide__body" id="guide-body">
-          <p>Finding reliable <?php echo esc_html( $nsa_kwl ); ?> in <?php echo esc_html( $nsa_loc ); ?> should be quick and simple. No Strings Attached gives <?php echo esc_html( $nsa_loc ); ?> locals secure, galvanised box trailers they can book online and collect 24/7 from Upper Kedron or Gaythorne, without queues, counters or paperwork.</p>
-          <p>Before you book, it helps to know the answers to a few common questions:</p>
-          <ul>
-            <li>Which trailer size suits my job?</li>
-            <li>What can I safely carry?</li>
-            <li>How do I collect and return the trailer?</li>
-            <li>How is <?php echo esc_html( $nsa_kwl ); ?> in <?php echo esc_html( $nsa_loc ); ?> priced?</li>
-            <li>What should I check before I tow?</li>
-          </ul>
-          <p class="guide__strong">This guide covers everything you need to hire, load and tow with confidence.</p>
-
-          <h3>Why choose <?php echo esc_html( $nsa_kwl ); ?> in <?php echo esc_html( $nsa_loc ); ?> over a van or ute?</h3>
-          <p>For most moves, tip runs and weekend projects, a box trailer is the most affordable way to carry bulky items. You keep driving your own car, there is no extra driver to book, and you only pay for the days you need.</p>
-          <ul>
-            <li>Use your own car and tow bar</li>
-            <li>No extra driver or delivery fee</li>
-            <li>Collect and return any time, day or night</li>
-            <li>Discounted rates for multi day hires</li>
-          </ul>
-          <p class="guide__strong">A trailer gives you the space of a ute with the flexibility of your own schedule.</p>
-
-          <h3>Choose the right trailer size</h3>
-          <p>NSA offers two galvanised, caged box trailers so you can match the trailer to the job.</p>
-          <ul>
-            <li><b>8x5 caged box trailer:</b> best for house and unit moves, large furniture, whitegoods and big green waste clean ups</li>
-            <li><b>7x5 caged box trailer:</b> ideal for tip runs, small moves, DIY supplies and weekend jobs</li>
-            <li><b>Not sure?</b> Call 0447 943 160 and tell us what you are moving</li>
-          </ul>
-
-          <h3>What you can carry</h3>
-          <p>Our trailers handle a wide range of everyday loads around <?php echo esc_html( $nsa_loc ); ?>, including:</p>
-          <ul>
-            <li>Sofas, beds, mattresses, tables and boxes</li>
-            <li>Fridges, washing machines and other whitegoods</li>
-            <li>Garden waste, branches, mulch, soil and turf</li>
-            <li>Timber, pavers and renovation materials</li>
-            <li>Camping gear, bikes and extra luggage</li>
-          </ul>
-
-          <h3>How to book <?php echo esc_html( $nsa_kwl ); ?> in <?php echo esc_html( $nsa_loc ); ?></h3>
-          <p>Booking takes a few minutes. Choose your trailer, select Upper Kedron or Gaythorne as your pickup point, then pick your dates. You will see your total before you confirm, and you receive secure access details to collect whenever it suits you.</p>
-          <ul>
-            <li>Pick your trailer and dates online</li>
-            <li>Confirm your booking and total</li>
-            <li>Unlock and collect with secure access</li>
-            <li>Return to the same location when you are done</li>
-          </ul>
-
-          <h3>Before you tow</h3>
-          <ul>
-            <li>Make sure your vehicle has a suitable tow bar and compatible trailer plug</li>
-            <li>Check your vehicle's towing capacity in the owner's manual</li>
-            <li>Confirm the coupling is locked, the safety chain is attached and the lights work</li>
-            <li>Allow extra braking distance and take corners wider than usual</li>
-          </ul>
-
-          <h3>Loading tips for a safe trip</h3>
-          <ul>
-            <li>Place the heaviest items low and slightly forward of the axle</li>
-            <li>Spread the weight evenly from side to side</li>
-            <li>Restrain every item with ratchet straps or rope</li>
-            <li>Cover and secure loose loads such as green waste, soil and mulch</li>
-          </ul>
-
-          <h3>How much does <?php echo esc_html( $nsa_kwl ); ?> cost in <?php echo esc_html( $nsa_loc ); ?>?</h3>
-          <p>Your price depends on the trailer size and how long you need it. Each hire day is a full 24 hours, and multi day hires are discounted, so a weekend job often costs less per day than a single day hire.</p>
-          <p class="guide__strong">Your full total is always shown upfront before you confirm.</p>
-
-          <h3>Local <?php echo esc_html( $nsa_kwl ); ?> in <?php echo esc_html( $nsa_loc ); ?></h3>
-          <p>With pickup points in Upper Kedron and Gaythorne, NSA is close to <?php echo esc_html( $nsa_loc ); ?> and nearby suburbs such as <?php echo esc_html( $nsa_sub_text ); ?>. Book online, collect when it suits you and get moving with no strings attached.</p>
-        </div>
-        <div class="guide__fade" aria-hidden="true"></div>
-        <div class="guide__actions">
-          <button class="guide__toggle" type="button" aria-expanded="false" aria-controls="guide-body"><span class="guide__label">Read more</span> <span class="guide__chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></span></button>
-        </div>
-      </div>
-      <aside class="benefits reveal">
-        <span class="benefits__pill"><i></i>What You Get</span>
-        <h3 class="benefits__title">Benefits</h3>
-        <ul class="benefits__list">
-            <li class="reveal" style="transition-delay:0.0s"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span>24/7 contactless pickup and return</span></li>
-            <li class="reveal" style="transition-delay:0.08s"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span>Galvanised, caged trailers checked before every hire</span></li>
-            <li class="reveal" style="transition-delay:0.16s"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span>Your full total shown before you book</span></li>
-            <li class="reveal" style="transition-delay:0.24s"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span>Discounts on multi day hires</span></li>
-            <li class="reveal" style="transition-delay:0.32s"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span>Two pickup points in Upper Kedron and Gaythorne</span></li>
-            <li class="reveal" style="transition-delay:0.4s"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span>Friendly local support by phone, text or email</span></li>
-        </ul>
-        <div class="benefits__best"><small>Best for:</small><p><?php echo esc_html( $nsa_loc ); ?> locals moving house, clearing out junk or tackling weekend projects who want a trailer without the hassle.</p></div>
-        <a class="btn btn--brand btn--block" href="#quote">Book a Trailer <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
-      </aside>
     </div>
   </div>
 </section>
