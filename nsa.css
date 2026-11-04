@@ -158,6 +158,67 @@ form.is-sent .form-body{display:none}
 form.is-sent .form-success{display:block;animation:fadeUp .6s var(--ease)}
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
 
+
+/* ================= Banner quote form (qf) ================= */
+.qf{padding:0;overflow:hidden;background:var(--white);box-shadow:0 60px 120px -40px rgba(0,0,0,.75),0 0 0 1px rgba(255,212,0,.35)}
+.qf::before{display:none}
+.hero__form::after{content:"";position:absolute;inset:-3px;border-radius:30px;z-index:-1;background:conic-gradient(from var(--qf-a,0deg),var(--brand),transparent 25%,transparent 60%,var(--brand));animation:qfspin 6s linear infinite;filter:blur(18px);opacity:.55}
+@property --qf-a{syntax:"<angle>";inherits:false;initial-value:0deg}
+@keyframes qfspin{to{--qf-a:360deg}}
+.hero__form{position:relative;isolation:isolate}
+.hero__form::before{content:"";position:absolute;inset:8% 0 0 8%;background:radial-gradient(closest-side,rgba(255,212,0,.35),transparent);z-index:-1;filter:blur(30px)}
+.qf__head{position:relative;background:var(--brand);color:var(--ink);padding:26px clamp(22px,2.6vw,34px) 24px;overflow:hidden}
+.qf__head::after{content:"";position:absolute;right:-50px;top:-70px;width:200px;height:200px;border-radius:50%;border:2px solid rgba(20,17,0,.12);box-shadow:0 0 0 26px rgba(20,17,0,.05)}
+.qf__head h2{font-size:clamp(1.6rem,2.2vw,2.15rem);margin:10px 0 4px}
+.qf__head p{margin:0;font-size:.93rem;color:#3B3400}
+.qf__status{display:inline-flex;align-items:center;gap:9px;background:var(--ink);color:var(--white);font-size:.76rem;font-weight:600;letter-spacing:.03em;padding:6px 13px 6px 10px;border-radius:999px}
+.qf__status i{width:8px;height:8px;border-radius:50%;background:#2BD67B;box-shadow:0 0 0 0 rgba(43,214,123,.7);animation:qfdot 1.8s infinite}
+@keyframes qfdot{70%{box-shadow:0 0 0 8px rgba(43,214,123,0)}100%{box-shadow:0 0 0 0 rgba(43,214,123,0)}}
+.qf__inner{padding:22px clamp(22px,2.6vw,34px) 26px}
+.qf__group{border:0;margin:0 0 18px;padding:0;min-width:0}
+.qf__group legend{padding:0;margin-bottom:10px;font-size:.74rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.qf__trailers{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.qf__trailer input,.qf__seg input{position:absolute;opacity:0;pointer-events:none}
+.qf__trailer-card{position:relative;display:flex;align-items:center;gap:12px;padding:10px 12px;border:1.5px solid var(--line);border-radius:14px;background:#FBFAF7;cursor:pointer;transition:border-color .3s,box-shadow .3s,transform .3s var(--ease),background .3s}
+.qf__trailer-card img{width:56px;height:44px;object-fit:cover;border-radius:9px;flex:none}
+.qf__trailer-card b{display:block;font-size:.95rem;line-height:1.2}
+.qf__trailer-card small{display:block;font-size:.76rem;color:var(--muted);line-height:1.3}
+.qf__tick{position:absolute;top:-8px;right:-8px;width:22px;height:22px;border-radius:50%;background:var(--ink);color:var(--brand);display:grid;place-items:center;transform:scale(0);transition:transform .35s var(--ease)}
+.qf__tick svg{width:12px;height:12px}
+.qf__trailer-card:hover{border-color:#CFCBBE;transform:translateY(-2px)}
+.qf__trailer input:checked + .qf__trailer-card{border-color:var(--ink);background:var(--white);box-shadow:0 10px 24px -14px rgba(10,11,13,.5),0 0 0 3px rgba(255,212,0,.55)}
+.qf__trailer input:checked + .qf__trailer-card .qf__tick{transform:scale(1)}
+.qf__trailer input:focus-visible + .qf__trailer-card,.qf__seg input:focus-visible + span{outline:2px solid var(--ink);outline-offset:2px}
+.qf__seg{display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:4px;background:var(--paper-2);border-radius:12px;margin-bottom:12px}
+.qf__seg span{display:flex;align-items:center;justify-content:center;gap:7px;padding:10px 8px;border-radius:9px;font-size:.9rem;font-weight:600;color:var(--muted);cursor:pointer;transition:background .3s,color .3s,box-shadow .3s}
+.qf__seg svg{width:15px;height:15px}
+.qf__seg input:checked + span{background:var(--ink);color:var(--white);box-shadow:0 6px 14px -6px rgba(10,11,13,.6)}
+.qf__seg input:checked + span svg{color:var(--brand)}
+.qf .form-grid{gap:10px}
+.qf__field{position:relative}
+.qf__field label:not(.sr-only){font-size:.74rem;color:var(--muted);font-weight:600}
+.qf__ico{position:absolute;left:14px;bottom:0;height:48px;display:flex;align-items:center;color:#9AA0A8;pointer-events:none;transition:color .3s}
+.qf__ico svg{width:17px;height:17px}
+.qf__field input{height:48px;padding:0 14px 0 42px;border-radius:12px}
+.qf__field:focus-within .qf__ico{color:var(--ink)}
+.qf__field input:not(:placeholder-shown):valid{border-color:#BFE3CF;background:#F6FBF8}
+.qf__submit{margin-top:4px;padding:19px 30px;font-size:1.06rem;box-shadow:0 18px 34px -14px rgba(255,190,0,.9)}
+.qf__submit::before{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.65),transparent);transform:skewX(-20deg);animation:qfshine 3.2s ease-in-out infinite;z-index:1;pointer-events:none}
+@keyframes qfshine{0%,55%{left:-60%}100%{left:130%}}
+.qf__trust{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 12px;list-style:none;margin:16px 0 0;padding:14px 0 0;border-top:1px dashed var(--line)}
+.qf__trust li{display:flex;align-items:center;gap:6px;font-size:.78rem;font-weight:500;color:var(--muted)}
+.qf__trust svg{width:15px;height:15px;color:#1C9A5A}
+.qf__call{display:block;text-align:center;margin-top:12px;font-size:.88rem;color:var(--muted)}
+.qf__call b{color:var(--ink);border-bottom:2px solid var(--brand);transition:border-color .3s}
+.qf__call:hover b{border-color:var(--ink)}
+.qf .form-success{padding:60px 30px}
+@media (max-width:420px){
+  .qf__trailers{grid-template-columns:1fr}
+  .qf__trust{justify-content:flex-start}
+}
+@media (max-width:720px){.qf .qf__dates{grid-template-columns:1fr 1fr}}
+@media (prefers-reduced-motion:reduce){.hero__form::after,.qf__submit::before{display:none}}
+
 /* ================= Marquee ================= */
 .marquee{background:var(--brand);color:var(--ink);overflow:hidden;padding:22px 0;border-block:1px solid #E8C200}
 .marquee__track{display:flex;gap:56px;width:max-content;animation:marquee 38s linear infinite}
