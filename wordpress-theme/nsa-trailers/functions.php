@@ -24,5 +24,5 @@ add_filter( 'script_loader_tag', function ( $tag, $handle ) {
 
 /* LocalBusiness schema on every page */
 add_action( 'wp_head', function () {
-	echo '<script type="application/ld+json">' . wp_json_encode( json_decode( '{"@context": "https://schema.org", "@type": "LocalBusiness", "name": "No Strings Attached Trailer Hire", "url": "https://www.nsatrailers.com.au/", "telephone": "+61447943160", "email": "bodhi@lockii.app", "image": "https://cdn.lockii.app/f924369c-811d-4f8e-b768-aecd5cfa0ce8.png", "areaServed": ["Upper Kedron", "Gaythorne", "Brisbane"], "address": {"@type": "PostalAddress", "addressLocality": "Brisbane", "addressRegion": "QLD", "addressCountry": "AU"}, "openingHours": "Mo-Su 00:00-23:59"}', true ) ) . '</script>' . "\n";
+	echo '<script type="application/ld+json">' . wp_json_encode( json_decode( '{"@context": "https://schema.org", "@type": "LocalBusiness", "name": "No Strings Attached Trailer Hire", "url": "https://www.nsatrailers.com.au/", "telephone": "+61447943160", "email": "bodhi@lockii.app", "image": "https://cdn.lockii.app/f924369c-811d-4f8e-b768-aecd5cfa0ce8.png?class=md", "areaServed": ["Upper Kedron", "Gaythorne", "Brisbane"], "address": {"@type": "PostalAddress", "addressLocality": "Brisbane", "addressRegion": "QLD", "addressCountry": "AU"}, "openingHours": "Mo-Su 00:00-23:59"}', true ) ) . '</script>' . "\n";
 } );

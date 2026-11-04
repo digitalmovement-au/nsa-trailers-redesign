@@ -2,7 +2,7 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src="https://cdn.lockii.app/f924369c-811d-4f8e-b768-aecd5cfa0ce8.png" alt="NSA No Strings Attached Trailer Hire" width="180" height="52" loading="lazy">
+        <img src="https://cdn.lockii.app/f924369c-811d-4f8e-b768-aecd5cfa0ce8.png?class=md" alt="NSA No Strings Attached Trailer Hire" width="180" height="52" loading="lazy">
         <p>Reliable, secure and simple trailer hire on Brisbane's north side. Book online, collect 24/7 and get moving with no strings attached.</p>
         <div class="socials">
           <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 9h3V5h-3a4 4 0 0 0-4 4v2H8v4h2v7h4v-7h3l1-4h-4V9z"/></svg></a>

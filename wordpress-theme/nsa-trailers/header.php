@@ -3,6 +3,7 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
 <meta name="theme-color" content="#0A0B0D">
 <?php wp_head(); ?>
 </head>
@@ -25,7 +26,7 @@
 <header class="site-header">
   <div class="container">
     <a class="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="No Strings Attached Trailer Hire home">
-      <img src="https://cdn.lockii.app/f924369c-811d-4f8e-b768-aecd5cfa0ce8.png" alt="NSA No Strings Attached Trailer Hire" width="160" height="46">
+      <img src="https://cdn.lockii.app/f924369c-811d-4f8e-b768-aecd5cfa0ce8.png?class=md" alt="NSA No Strings Attached Trailer Hire" width="160" height="46">
     </a>
     <nav aria-label="Primary">
       <ul class="nav">
