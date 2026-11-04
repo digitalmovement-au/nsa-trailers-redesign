@@ -4,7 +4,7 @@ get_header(); ?>
 <main id="main">
 <!-- HERO: content visible immediately, no reveal animation -->
 <section class="hero">
-  <div class="hero__bg" style="background-image:url('https://cdn.lockii.app/a103ece7-e4a4-4804-be81-2d8147a23ce9.svg?class=xl')"></div>
+  <div class="hero__bg" style="background-image:url('https://cdn.lockii.app/a5ae50af-2bdd-4f65-ba10-10ef1a1c7e97.png?class=xl')"></div>
   <div class="container hero__grid">
     <div class="hero__content">
       <span class="hero__badge"><b>24/7</b> Contactless pickup in Brisbane's north</span>
@@ -37,7 +37,7 @@ get_header(); ?>
   <div class="container split">
     <div class="media-stack reveal reveal--left">
       <span class="media-stack__tag">Locally owned in Brisbane</span>
-      <div class="media-stack__main"><img data-parallax src="https://cdn.lockii.app/a5ae50af-2bdd-4f65-ba10-10ef1a1c7e97.png?class=lg" alt="Galvanised box trailers ready for hire at NSA Trailers Brisbane" loading="lazy"></div>
+      <div class="media-stack__main"><img data-parallax src="https://cdn.lockii.app/2320e099-0bde-4f87-959a-b93867286022.png?class=lg" alt="Galvanised box trailers ready for hire at NSA Trailers Brisbane" loading="lazy"></div>
       <div class="media-stack__float"><strong>24/7</strong><span>Pick up and drop off on your schedule, not ours.</span></div>
     </div>
     <div>
