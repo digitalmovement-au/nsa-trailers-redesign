@@ -814,3 +814,5 @@ form.is-sent .form-success{display:block;animation:fadeUp .6s var(--ease)}
   .guide,.guide__body{text-align:left}
   .guide__actions{text-align:center}
 }
+/* Rental card badge sits above the title, no text on images */
+.fleet-card__body .fleet-card__chip{position:static;display:inline-block;align-self:center;width:max-content;transform:none;margin:0 0 14px;left:auto!important}
