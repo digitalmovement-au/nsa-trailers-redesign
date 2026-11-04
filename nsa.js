@@ -87,7 +87,7 @@
         })(start);
         cio.unobserve(el);
       });
-    }, { threshold: 0.6 });
+    }, { threshold: 0.1 });
     counters.forEach(function (c) { if (!reduce) { c.textContent = '0'; cio.observe(c); } });
   }
 

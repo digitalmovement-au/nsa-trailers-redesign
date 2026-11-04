@@ -752,3 +752,16 @@ form.is-sent .form-success{display:block;animation:fadeUp .6s var(--ease)}
 .fleet-card__specs li{color:#F0F1F3}
 .mobile-panel p{color:#D2D5DA}
 .hero__lead{max-width:none}
+
+/* ===== Landing page polish ===== */
+.media-stack__tag,.media-stack__float{z-index:2}
+.suburbs-section .suburbs li{background:var(--white);border:1px solid var(--line);color:var(--ink);box-shadow:0 8px 20px -14px rgba(10,11,13,.35)}
+.suburbs-section .suburbs li:hover{background:var(--brand);border-color:var(--brand);color:var(--ink)}
+.split{align-items:center}
+@media (max-width:1024px){
+  .steps__line{z-index:0}
+  .step{z-index:1}
+}
+@media (max-width:720px){
+  .compare th,.compare td{padding:14px 12px;font-size:.86rem}
+}
